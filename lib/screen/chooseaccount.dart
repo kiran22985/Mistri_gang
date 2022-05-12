@@ -15,7 +15,10 @@ class _AccountChosePageState extends State<AccountChosePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Choose account type'),
+            const Text('Choose account type',style:TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+            )),
             const SizedBox(height:50),
             InkWell(
             //splashColor: Colors.blue,
@@ -28,7 +31,7 @@ class _AccountChosePageState extends State<AccountChosePage> {
               width: 140,
               height: 150,
               child: const Image(image: AssetImage('assets/images/professional.jpg'),height: 110,width:140 ,),
-              color: Colors.grey,
+              color: Colors.white,
 
 
             ),
@@ -42,7 +45,7 @@ class _AccountChosePageState extends State<AccountChosePage> {
               width: 140,
               height: 150,
               child: const Image(image: AssetImage('assets/images/customer.jpg'),height: 110,width:140 ,),
-              color: Colors.grey,
+              color: Colors.white,
 
 
             ),
