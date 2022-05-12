@@ -99,7 +99,7 @@ class _OTP2State extends State<OTP2> {
               ),
               SizedBox(height: 30,),
               ElevatedButton(onPressed: (){
-                    //Navigator.pushNamed(context, '/accountchoose');
+                    Navigator.pushNamed(context, '/login');
                   },
                   
                    child: const Text('Submit',textScaleFactor: 1.2,),style: ElevatedButton.styleFrom(
