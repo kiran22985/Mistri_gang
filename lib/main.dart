@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
           '/':(context) => const WelcomePage(),
           '/accountchoose':(context) => const AccountChosePage(),
           '/register1':(context) => const RegisterPage1(),
+          
       },
     );
   }
