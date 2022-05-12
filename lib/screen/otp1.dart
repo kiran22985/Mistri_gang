@@ -11,7 +11,16 @@ class _OTP1State extends State<OTP1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      body: SafeArea(child: Column(
+        children:const  [
+          Image(image: AssetImage('assets/images/')),
+          SizedBox(height: 30,),
+          Text('OTP Verification',style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
+          ),)
+        ],
+      )),
       
     );
   }
