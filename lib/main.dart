@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mistri/screen/chooseaccount.dart';
+import 'package:mistri/screen/login.dart';
 import 'package:mistri/screen/otp1.dart';
 import 'package:mistri/screen/otp2.dart';
 import 'package:mistri/screen/register.dart';
@@ -35,8 +36,8 @@ class MyApp extends StatelessWidget {
           '/accountchoose':(context) => const AccountChosePage(),
           '/register1':(context) => const RegisterPage1(),
           '/otp1':(context) => const OTP1(),
-          '/otp2':(context) => const OTP2(),
-          
+          '/otp2':(context) => const OTP2(),  
+          '/login':(context) => const LoginPage(),
       },
     );
   }
