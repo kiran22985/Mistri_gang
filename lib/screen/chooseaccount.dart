@@ -24,7 +24,7 @@ class _AccountChosePageState extends State<AccountChosePage> {
             //splashColor: Colors.blue,
             //highlightColor: Colors.brown,
             onTap: (){
-              Navigator.pushNamed(context, '/register1');
+              Navigator.pushNamed(context, '/otp1');
             },
               child: Container(
               alignment: Alignment.center,
