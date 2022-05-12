@@ -20,11 +20,11 @@ class WelcomePage extends StatelessWidget {
                       alignment: Alignment.center,
                       width: 30,
                       height: 30,
-                      color: Colors.grey.shade700,
-                      child: const Text('SD',style: TextStyle(color: Colors.white),),
+                      color: Colors.blue,
+                      child: const Text('M',style: TextStyle(color: Colors.white),),
                     ),
                     const SizedBox(width: 30,),
-                    const Text('Welcome To SkillDrill',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)
+                    const Text('Welcome To Mistri',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)
                   ],
                 ),
                 const SizedBox(height: 30,),
@@ -51,10 +51,10 @@ class WelcomePage extends StatelessWidget {
                   ),
                   const SizedBox(height: 50,),
                   ElevatedButton(onPressed: (){
-                    Navigator.pushNamed(context, '/signup');
+                    Navigator.pushNamed(context, '/accountchoose');
                   }, child: const Text('Get Started',textScaleFactor: 1.2,),style: ElevatedButton.styleFrom(
-                    primary: Colors.grey.shade700,
-                    minimumSize: const Size(150,40)
+                    primary: Colors.blue,
+                    minimumSize: const Size(150,40),
                   ),
                   )
               ],
