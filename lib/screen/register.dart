@@ -69,7 +69,7 @@ class _RegisterPage1State extends State<RegisterPage1> {
                     height: 40,
                     padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                     child: Material(
-                      elevation: 5,
+                      //elevation: 5,
                       child: TextFormField(
                         onSaved: (value) {
                           //username = value!;
@@ -94,7 +94,7 @@ class _RegisterPage1State extends State<RegisterPage1> {
                     height: 40,
                     padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                     child: Material(
-                      elevation: 5,
+                      //elevation: 5,
                       child: TextFormField(
                         onSaved: (value) {
                           //email = value!;
@@ -119,7 +119,7 @@ class _RegisterPage1State extends State<RegisterPage1> {
                     height: 40,
                     padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                     child: Material(
-                      elevation: 5,
+                      //elevation: 5,
                       child: TextFormField(
                         onSaved: (value) {
                           //phone = value!;
@@ -144,7 +144,7 @@ class _RegisterPage1State extends State<RegisterPage1> {
                     height: 40,
                     padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                     child: Material(
-                      elevation: 5,
+                      //elevation: 5,
                       child: TextFormField(
                         onSaved: (value) {
                           //phone = value!;
@@ -170,7 +170,7 @@ class _RegisterPage1State extends State<RegisterPage1> {
                     height: 50,
                     padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
                     child: Material(
-                      elevation: 5,
+                      //elevation: 5,
                       child: TextFormField(
                         onSaved: (value) {
                           //password = value!;
