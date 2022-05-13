@@ -26,6 +26,7 @@ class _OTP1State extends State<OTP1> {
               const Text('We will send you 4 digits OTP code on this email ',textAlign: TextAlign.center,),
               //const SizedBox(height: 20,),
               Container(
+                height: 60,
                 padding: const EdgeInsets.fromLTRB(40, 20, 40, 0),
                 child: Material(
                   elevation: 10.0,
@@ -36,7 +37,7 @@ class _OTP1State extends State<OTP1> {
                       hintText: 'anushkagiri2298@gmail.com',
                       labelText: 'Email',
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(5),
                         
                       ),
                         

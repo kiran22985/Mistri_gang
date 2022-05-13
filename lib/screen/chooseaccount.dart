@@ -23,9 +23,7 @@ class _AccountChosePageState extends State<AccountChosePage> {
             InkWell(
             //splashColor: Colors.blue,
             //highlightColor: Colors.brown,
-            onTap: (){
-              Navigator.pushNamed(context, '/otp1');
-            },
+            
               child: Container(
               alignment: Alignment.center,
               width: 140,
@@ -37,10 +35,14 @@ class _AccountChosePageState extends State<AccountChosePage> {
             ),
             
             ),
-            SizedBox(height:20),
-            Text('Professional'),
+            const SizedBox(height:20),
+            const Text('Professional'),
             const SizedBox(height:50),
-            InkWell(child: Container(
+            InkWell(
+              onTap: (){
+              Navigator.pushNamed(context, '/register1');
+            },
+              child: Container(
               alignment: Alignment.center,
               width: 140,
               height: 150,
@@ -49,9 +51,9 @@ class _AccountChosePageState extends State<AccountChosePage> {
 
 
             ),
-            onTap: (){},),
-            SizedBox(height: 20,),
-            Text('Seeker'),
+            ),
+            const SizedBox(height: 20,),
+            const Text('Seeker'),
           ],
         ),
       ))

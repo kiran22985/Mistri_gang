@@ -57,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 35,
                   ),
                   Container(
-                    height: 50,
+                    height: 40,
                     padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                     child: Material(
                       child: TextFormField(
@@ -83,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 15,
                   ),
                   Container(
-                    height: 60,
+                    height: 50,
                     padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
                     child: Material(
                       
@@ -110,6 +110,17 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   const SizedBox(
                     height: 20,
+                  ),
+                  TextButton(
+                        onPressed: () {
+                          //Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                        },
+                        child: const Text(
+                          'Forget password',
+                          style: TextStyle(color: Colors.blue, fontSize: 15,decoration: TextDecoration.underline),
+                        )),
+                  const SizedBox(
+                    height: 15,
                   ),
                   
                   ElevatedButton(
