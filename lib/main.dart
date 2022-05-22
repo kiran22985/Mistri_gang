@@ -4,7 +4,15 @@ import 'package:mistri/screen/login.dart';
 import 'package:mistri/screen/otp1.dart';
 import 'package:mistri/screen/otp2.dart';
 import 'package:mistri/screen/register.dart';
+<<<<<<< HEAD
 
+=======
+import 'package:mistri/screen/resetpass1.dart';
+import 'package:mistri/screen/resetpass2.dart';
+import 'package:mistri/screen/resetpass3.dart';
+import 'package:mistri/screen/verified.dart';
+import 'package:mistri/screen/welcome.dart';
+>>>>>>> d5eae2879d2f41cea659ca5470b046b9c18158c1
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +39,11 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
+<<<<<<< HEAD
 
+=======
+      initialRoute: '/reset1',
+>>>>>>> d5eae2879d2f41cea659ca5470b046b9c18158c1
       routes:  {
           //'/':(context) => const WelcomePage(),
           '/accountchoose':(context) => const AccountChosePage(),
@@ -39,7 +51,14 @@ class MyApp extends StatelessWidget {
           '/otp1':(context) => const OTP1(),
           '/otp2':(context) => const OTP2(),  
           '/login':(context) => const LoginPage(),
+<<<<<<< HEAD
 
+=======
+          '/verified':(context) => const VerifiedPage(),
+          '/reset1':(context) => const ResetPage1(),
+          '/reset2':(context) => const ResetPage2(),
+          '/reset3':(context) => const ResetPage3(),
+>>>>>>> d5eae2879d2f41cea659ca5470b046b9c18158c1
       },
     );
   }
