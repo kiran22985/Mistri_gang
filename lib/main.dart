@@ -4,6 +4,7 @@ import 'package:mistri/screen/login.dart';
 import 'package:mistri/screen/otp1.dart';
 import 'package:mistri/screen/otp2.dart';
 import 'package:mistri/screen/register.dart';
+import 'package:mistri/screen/resetpass1.dart';
 import 'package:mistri/screen/welcome.dart';
 
 void main() {
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
+      initialRoute: '/reset1',
       routes:  {
           '/':(context) => const WelcomePage(),
           '/accountchoose':(context) => const AccountChosePage(),
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
           '/otp1':(context) => const OTP1(),
           '/otp2':(context) => const OTP2(),  
           '/login':(context) => const LoginPage(),
+          '/reset1':(context) => const ResetPage1()
       },
     );
   }
