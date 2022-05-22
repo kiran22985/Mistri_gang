@@ -218,7 +218,7 @@ class _RegisterPage1State extends State<RegisterPage1> {
                         style: TextStyle(fontSize: 15)),
                     TextButton(
                         onPressed: () {
-                          //Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                          Navigator.pushNamed(context, '/login');
                         },
                         child: const Text(
                           'Login',
