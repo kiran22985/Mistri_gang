@@ -4,8 +4,7 @@ import 'package:mistri/screen/login.dart';
 import 'package:mistri/screen/otp1.dart';
 import 'package:mistri/screen/otp2.dart';
 import 'package:mistri/screen/register.dart';
-import 'package:mistri/screen/resetpass1.dart';
-import 'package:mistri/screen/welcome.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -31,15 +31,15 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/reset1',
+
       routes:  {
-          '/':(context) => const WelcomePage(),
+          //'/':(context) => const WelcomePage(),
           '/accountchoose':(context) => const AccountChosePage(),
           '/register1':(context) => const RegisterPage1(),
           '/otp1':(context) => const OTP1(),
           '/otp2':(context) => const OTP2(),  
           '/login':(context) => const LoginPage(),
-          '/reset1':(context) => const ResetPage1()
+
       },
     );
   }
