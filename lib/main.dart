@@ -3,6 +3,9 @@ import 'package:mistri/screen/chooseaccount.dart';
 import 'package:mistri/screen/login.dart';
 import 'package:mistri/screen/otp1.dart';
 import 'package:mistri/screen/otp2.dart';
+import 'package:mistri/screen/proregpage1.dart';
+import 'package:mistri/screen/proregpage2.dart';
+import 'package:mistri/screen/proregpage4.dart';
 import 'package:mistri/screen/register.dart';
 import 'package:mistri/screen/resetpass1.dart';
 import 'package:mistri/screen/resetpass2.dart';
@@ -35,7 +38,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
+      initialRoute: '/proreg1',
       routes:  {
           '/':(context) => const WelcomePage(),
           '/accountchoose':(context) => const AccountChosePage(),
@@ -47,6 +50,9 @@ class MyApp extends StatelessWidget {
           '/reset1':(context) => const ResetPage1(),
           '/reset2':(context) => const ResetPage2(),
           '/reset3':(context) => const ResetPage3(),
+          '/proreg1':(context) => const ProRegPage1(),
+          '/proreg2':(context) => const ProRegPage2(),
+          '/proreg4':(context) => const ProRegPage4(),
       },
     );
   }
