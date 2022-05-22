@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ResetPage1 extends StatefulWidget {
-  const ResetPage1({ Key? key }) : super(key: key);
+class ResetPage3 extends StatefulWidget {
+  const ResetPage3({ Key? key }) : super(key: key);
 
   @override
-  State<ResetPage1> createState() => _ResetPage1State();
+  State<ResetPage3> createState() => _ResetPage3State();
 }
 
-class _ResetPage1State extends State<ResetPage1> {
+class _ResetPage3State extends State<ResetPage3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,20 +15,20 @@ class _ResetPage1State extends State<ResetPage1> {
         child: SafeArea(child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Reset Password',style: TextStyle(
+            Text('Create New Password',style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20
             ),),
             SizedBox(height: 20,),
             Container(
               width: 350,
-              child: Text('Enter the email associated with your account and will send an email with instructions to reset your password.',textAlign: TextAlign.center,style: TextStyle(
+              child: Text('Your new password must be different from previous used password',textAlign: TextAlign.center,style: TextStyle(
                 
               ),),
 
             ),
             SizedBox(height: 30,),
-            Text('Email address',style: TextStyle(
+            Text('Password',style: TextStyle(
               fontWeight: FontWeight.bold,
               //fontSize: 20
             ),),
@@ -39,10 +39,37 @@ class _ResetPage1State extends State<ResetPage1> {
                   //elevation: 10.0,
                   shadowColor: Colors.white,
                   child: TextFormField(
+                    obscureText: true,
                     keyboardType: TextInputType.emailAddress, 
                     decoration: InputDecoration(
-                      hintText: 'anushkagiri2298@gmail.com',
-                      labelText: 'Email',
+                      //hintText: 'anushkagiri2298@gmail.com',
+                      labelText: '**********',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5),
+                        
+                      ),
+                        
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 30,),
+            Text('Confirm Password',style: TextStyle(
+              fontWeight: FontWeight.bold,
+              //fontSize: 20
+            ),),
+            Container(
+                height: 40,
+                padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
+                child: Material(
+                  //elevation: 10.0,
+                  shadowColor: Colors.white,
+                  child: TextFormField(
+                    obscureText: true,
+                    keyboardType: TextInputType.emailAddress, 
+                    decoration: InputDecoration(
+                      //hintText: 'anushkagiri2298@gmail.com',
+                      labelText: '**********',
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5),
                         
@@ -54,10 +81,10 @@ class _ResetPage1State extends State<ResetPage1> {
               ),
               SizedBox(height: 30,),
               ElevatedButton(onPressed: (){
-                    Navigator.pushNamed(context, '/reset2');
+                    //Navigator.pushNamed(context, '/otp2');
                   },
                   
-                   child: const Text('Send instructions',textScaleFactor: 1.2,),style: ElevatedButton.styleFrom(
+                   child: const Text('Reset password',textScaleFactor: 1.2,),style: ElevatedButton.styleFrom(
                     primary: Colors.blue,
                     minimumSize: const Size(250,40),
                     elevation: 10,
@@ -74,4 +101,3 @@ class _ResetPage1State extends State<ResetPage1> {
     );
   }
 }
-
