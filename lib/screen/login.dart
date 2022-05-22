@@ -159,25 +159,11 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         const Text('Don\'t have an account?',style: TextStyle(fontSize: 15)),
                         TextButton(onPressed: (){
-                          //Navigator.push(context, MaterialPageRoute(builder: (context)=>SignupPage()));
+                          Navigator.pushNamed(context, '/register1');
                         }, child: const Text('SignUp',style: TextStyle(color: Colors.blue,fontSize: 15),))
                       ]
                     ),
-                    SizedBox(height:20),
-                    // ElevatedButton(
-                    //   onPressed: () {
-                    //     //Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
-                    //   },
-                    //   child: const Text('Lets go',
-                    //       style: TextStyle(
-                    //           fontSize: 20, fontWeight: FontWeight.bold)),
-                    //   style: ElevatedButton.styleFrom(
-                    //     primary: const Color(0xfffb5607),
-                    //     shape: RoundedRectangleBorder(
-                    //         borderRadius: BorderRadius.circular(20)),
-                    //     minimumSize: const Size(250, 50),
-                    //   ),
-                    // ),
+                    
                     
                   ],
                 ),
