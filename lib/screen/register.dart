@@ -214,13 +214,13 @@ class _RegisterPage1State extends State<RegisterPage1> {
                     height: 10,
                   ),
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    Text('Already have an account?',
+                    const Text('Already have an account?',
                         style: TextStyle(fontSize: 15)),
                     TextButton(
                         onPressed: () {
                           //Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
                         },
-                        child: Text(
+                        child: const Text(
                           'Login',
                           style: TextStyle(color: Colors.blue, fontSize: 15),
                         ))
