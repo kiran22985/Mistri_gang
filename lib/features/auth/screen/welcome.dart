@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mistri/common/widgets/custom_button.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({ Key? key }) : super(key: key);
@@ -50,13 +51,9 @@ class WelcomePage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 50,),
-                  ElevatedButton(onPressed: (){
+                  CustomButton(text: 'Get Started', onTap: (){
                     Navigator.pushNamed(context, '/accountchoose');
-                  }, child: const Text('Get Started',textScaleFactor: 1.2,),style: ElevatedButton.styleFrom(
-                    primary: Colors.blue,
-                    minimumSize: const Size(150,40),
-                  ),
-                  )
+                  })
               ],
             ),
           )

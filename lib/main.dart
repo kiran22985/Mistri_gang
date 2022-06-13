@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:mistri/screen/chooseaccount.dart';
-import 'package:mistri/screen/homepage.dart';
-import 'package:mistri/screen/login.dart';
-import 'package:mistri/screen/otp1.dart';
-import 'package:mistri/screen/otp2.dart';
-import 'package:mistri/screen/proregpage1.dart';
-import 'package:mistri/screen/proregpage2.dart';
-import 'package:mistri/screen/proregpage4.dart';
-import 'package:mistri/screen/register.dart';
-import 'package:mistri/screen/resetpass1.dart';
-import 'package:mistri/screen/resetpass2.dart';
-import 'package:mistri/screen/resetpass3.dart';
-import 'package:mistri/screen/verified.dart';
-import 'package:mistri/screen/welcome.dart';
+import 'package:mistri/features/auth/screen/chooseaccount.dart';
+import 'package:mistri/features/auth/screen/homepage.dart';
+import 'package:mistri/features/auth/screen/login.dart';
+import 'package:mistri/features/auth/screen/otp1.dart';
+import 'package:mistri/features/auth/screen/otp2.dart';
+import 'package:mistri/features/auth/screen/proregpage1.dart';
+import 'package:mistri/features/auth/screen/proregpage2.dart';
+import 'package:mistri/features/auth/screen/proregpage4.dart';
+import 'package:mistri/features/auth/screen/register.dart';
+import 'package:mistri/features/auth/screen/resetpass1.dart';
+import 'package:mistri/features/auth/screen/resetpass2.dart';
+import 'package:mistri/features/auth/screen/resetpass3.dart';
+import 'package:mistri/features/auth/screen/verified.dart';
+import 'package:mistri/features/auth/screen/welcome.dart';
 
 void main() {
   runApp(const MyApp());

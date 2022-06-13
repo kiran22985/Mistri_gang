@@ -112,7 +112,7 @@ class _OTP2State extends State<OTP2> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               ElevatedButton(

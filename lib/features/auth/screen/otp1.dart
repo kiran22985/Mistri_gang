@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mistri/common/widgets/custom_button.dart';
 
 class OTP1 extends StatefulWidget {
   const OTP1({ Key? key }) : super(key: key);
@@ -46,19 +47,9 @@ class _OTP1State extends State<OTP1> {
                 ),
               ),
               SizedBox(height: 30,),
-              ElevatedButton(onPressed: (){
-                    Navigator.pushNamed(context, '/otp2');
-                  },
-                  
-                   child: const Text('Get OTP',textScaleFactor: 1.2,),style: ElevatedButton.styleFrom(
-                    primary: Colors.blue,
-                    minimumSize: const Size(150,40),
-                    elevation: 10,
-                    shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                    
-                  ),
-                  )
+              CustomButton(text: 'Get OTP', onTap: (){
+                Navigator.pushNamed(context, '/otp2');
+              })
             ],
           ),
         ),

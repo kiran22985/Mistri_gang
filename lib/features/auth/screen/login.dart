@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mistri/common/widgets/custom_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({ Key? key }) : super(key: key);
@@ -124,33 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 15,
                     ),
                     
-                    ElevatedButton(
-                      key: Key("add button"),
-                      onPressed: () async{
-                        
-                      //   loginform.currentState!.save();
-                      //   var res = await loginPost(uname, pass);
-                      // if (res) {
-                      // Navigator.push(context,MaterialPageRoute(builder: (context)=>HomePage()));
-                      //   MotionToast.success(
-                      //     description: Text('Login Successfull'),
-                      //     toastDuration: const Duration(seconds: 1),
-                      //   ).show(context);
-                      // } else {
-                      //   MotionToast.error(description: Text('Login UnSuccessfull'))
-                      //       .show(context);
-                      // }
-                      },
-                      child: const Text('Login',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold)),
-                      style: ElevatedButton.styleFrom(
-                        primary:  Colors.blue,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                        minimumSize: const Size(150, 40),
-                      ),
-                    ),
+                    CustomButton(text: 'Login', onTap: (){}),
                     const SizedBox(
                       height: 10,
                     ),
