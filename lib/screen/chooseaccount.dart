@@ -23,7 +23,9 @@ class _AccountChosePageState extends State<AccountChosePage> {
             InkWell(
             //splashColor: Colors.blue,
             //highlightColor: Colors.brown,
-            
+              onTap: (){
+                Navigator.pushNamed(context, '/proreg1');
+              },
               child: Container(
               alignment: Alignment.center,
               width: 140,

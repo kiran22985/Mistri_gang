@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mistri/screen/chooseaccount.dart';
+import 'package:mistri/screen/homepage.dart';
 import 'package:mistri/screen/login.dart';
 import 'package:mistri/screen/otp1.dart';
 import 'package:mistri/screen/otp2.dart';
@@ -38,9 +39,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/proreg1',
+      initialRoute: '/home',
       routes:  {
           '/':(context) => const WelcomePage(),
+          '/home':(context) => const HomePage(),
           '/accountchoose':(context) => const AccountChosePage(),
           '/register1':(context) => const RegisterPage1(),
           '/otp1':(context) => const OTP1(),

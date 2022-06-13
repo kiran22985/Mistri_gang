@@ -59,7 +59,7 @@ class _ProRegPage1State extends State<ProRegPage1> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'assets/images/flag.png',
+                        'assets/images/flag.jpg',
                         height: 50,
                         width: 50,
                       ),
@@ -81,7 +81,7 @@ class _ProRegPage1State extends State<ProRegPage1> {
                           style: TextStyle(color: Colors.blue, fontSize: 16),
                         ),
                         onTap: () {
-                          Navigator.pushNamed(context, '/profreg2');
+                          Navigator.pushNamed(context, '/proreg2');
                         },
                       ),
                       InkWell(
@@ -90,7 +90,7 @@ class _ProRegPage1State extends State<ProRegPage1> {
                           style: TextStyle(color: Colors.blue, fontSize: 16),
                         ),
                         onTap: () {
-                          Navigator.pushNamed(context, '/profreg2');
+                          Navigator.pushNamed(context, '/proreg2');
                         },
                       ),
                       InkWell(
@@ -99,7 +99,7 @@ class _ProRegPage1State extends State<ProRegPage1> {
                           style: TextStyle(color: Colors.blue, fontSize: 16),
                         ),
                         onTap: () {
-                          Navigator.pushNamed(context, '/profreg2');
+                          Navigator.pushNamed(context, '/proreg2');
                         },
                       ),
                       InkWell(
@@ -108,7 +108,7 @@ class _ProRegPage1State extends State<ProRegPage1> {
                           style: TextStyle(color: Colors.blue, fontSize: 16),
                         ),
                         onTap: () {
-                          Navigator.pushNamed(context, '/profreg2');
+                          Navigator.pushNamed(context, '/proreg2');
                         },
                       ),
                     ]),
