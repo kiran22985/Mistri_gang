@@ -1,19 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:mistri/common/widgets/custom_button.dart';
+import 'package:mistri/common/widgets/custom_textfield.dart';
+import 'package:mistri/features/auth/services/auth_services.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({ Key? key }) : super(key: key);
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _signInFormKey = GlobalKey<FormState>();
+  final AuthService authService = AuthService();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   @override
+  void dispose() {
+    super.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+  }
+
+  void signInUser() {
+    authService.signInUser(
+      context: context,
+      email: _emailController.text,
+      password: _passwordController.text,
+      
+    );
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
-    
-      backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
         body: Center(
           child: SafeArea(
               child: SingleChildScrollView(
@@ -25,24 +45,34 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        alignment: Alignment.center,
-                        width: 30,
-                        height: 30,
-                        color: Colors.blue,
-                        child: const Text('M',style: TextStyle(color: Colors.white),),
-                      ),
-                      const SizedBox(width: 30,),
-                      const Text('Welcome To Mistri',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)
-                    ],
-                  ),
+                      children: [
+                        Container(
+                          alignment: Alignment.center,
+                          width: 30,
+                          height: 30,
+                          color: Colors.blue,
+                          child: const Text(
+                            'M',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 30,
+                        ),
+                        const Text(
+                          'Welcome To Mistri',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        )
+                      ],
+                    ),
                     const SizedBox(
                       height: 20,
                     ),
                     const Text(
                       'Login Your Account',
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(
                       height: 20,
@@ -59,94 +89,69 @@ class _LoginPageState extends State<LoginPage> {
                       height: 35,
                     ),
                     Container(
-                      height: 40,
-                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                      child: Material(
-                        child: TextFormField(
-                          key: Key("addfield"),
-                            //controller: lgController,
-                                onSaved: (value) {
-                                 // uname = value!;
-                                },  
-                          decoration: InputDecoration(
-                            icon: const Icon(Icons.email, color: Colors.blue),
-                            labelText: 'Email',
-                            hintText: 'Enter email here',
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Colors.grey, width: 2.0),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                          ),
-                        ),
-                      ),
+                      padding: EdgeInsets.all(20),
+                      child: Form(
+                          key: _signInFormKey,
+                          child: Column(
+                            children: [
+                              CustomeTextField(
+                                  controller1: _emailController,
+                                  labelText: 'Email',
+                                  hintText: 'Enter email here'),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              CustomeTextField(
+                                  labelText: 'password',
+                                  hintText: 'Enter password here',
+                                  controller1: _passwordController),
+                            ],
+                          )),
                     ),
                     const SizedBox(
                       height: 15,
-                    ),
-                    Container(
-                      height: 50,
-                      padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
-                      child: Material(
-                        
-                        child: TextFormField(
-                          key: Key("password field"),
-                        //controller: passController,
-                            onSaved: (newValue) {
-                              //pass = newValue!;
-                            },  
-                          //obscureText: isPasswordTextField,
-                          decoration: InputDecoration(
-                            
-                            icon: const Icon(Icons.lock, color: Colors.blue),
-                            labelText: 'Password',
-                            hintText: 'Enter password here',
-                            border: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: Color(0xfffb5607), width: 2.0),
-                              borderRadius: BorderRadius.circular(10.0),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
                     ),
                     TextButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/reset1');
-                          },
-                          child: const Text(
-                            'Forget password',
-                            style: TextStyle(color: Colors.blue, fontSize: 15,decoration: TextDecoration.underline),
-                          )),
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/reset1');
+                        },
+                        child: const Text(
+                          'Forget password',
+                          style: TextStyle(
+                              color: Colors.blue,
+                              fontSize: 15,
+                              decoration: TextDecoration.underline),
+                        )),
                     const SizedBox(
                       height: 15,
                     ),
-                    
-                    CustomButton(text: 'Login', onTap: (){}),
+                    CustomButton(
+                        text: 'Login',
+                        onTap: () {
+                          if (_signInFormKey.currentState!.validate()) {
+                            signInUser();
+                          }
+                        }),
                     const SizedBox(
                       height: 10,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text('Don\'t have an account?',style: TextStyle(fontSize: 15)),
-                        TextButton(onPressed: (){
-                          Navigator.pushNamed(context, '/register1');
-                        }, child: const Text('SignUp',style: TextStyle(color: Colors.blue,fontSize: 15),))
-                      ]
-                    ),
-                    
-                    
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      const Text('Don\'t have an account?',
+                          style: TextStyle(fontSize: 15)),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/register1');
+                          },
+                          child: const Text(
+                            'SignUp',
+                            style: TextStyle(color: Colors.blue, fontSize: 15),
+                          ))
+                    ]),
                   ],
                 ),
               ),
             ),
           )),
-        )
-      
-    );
+        ));
   }
 }

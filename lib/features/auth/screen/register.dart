@@ -12,7 +12,7 @@ class RegisterPage1 extends StatefulWidget {
 
 class _RegisterPage1State extends State<RegisterPage1> {
   final _signUpFormKey = GlobalKey<FormState>();
-  final _signInFormKey = GlobalKey<FormState>();
+  
   final AuthService authService = AuthService();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -95,7 +95,8 @@ class _RegisterPage1State extends State<RegisterPage1> {
                     height: 30,
                   ),
                   Container(
-
+                    padding: EdgeInsets.all(20),
+                    
                     child: Form(
                       key: _signUpFormKey,
                       child: Column(
@@ -124,36 +125,7 @@ class _RegisterPage1State extends State<RegisterPage1> {
                   const SizedBox(
                     height: 15,
                   ),
-                  Container(
-                    height: 50,
-                    padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
-                    child: Material(
-                      //elevation: 5,
-                      child: TextFormField(
-                        controller: _passwordController,
-                        onSaved: (value) {
-                          //password = value!;
-                        },
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          icon: const Icon(Icons.lock, color: Colors.blue),
-                          labelText: 'Password',
-                          hintText: 'Enter password here',
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: Color(0xfffb5607), width: 2.0),
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                        ),
-                        validator: (val) {
-            if (val == null || val.isEmpty) {
-              return 'Enter password';
-            }
-            return null;
-          },
-                      ),
-                    ),
-                  ),
+                  CustomeTextField(labelText: 'password', hintText: 'Enter password here', controller1: _passwordController),
 
                       ],
 
