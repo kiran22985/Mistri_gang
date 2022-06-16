@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mistri/common/widgets/custom_textfield.dart';
+import 'package:mistri/common/widgets/custom_button.dart';
+import 'package:mistri/features/auth/services/auth_services.dart';
 
 class RegisterPage1 extends StatefulWidget {
   const RegisterPage1({Key? key}) : super(key: key);
@@ -8,7 +11,33 @@ class RegisterPage1 extends StatefulWidget {
 }
 
 class _RegisterPage1State extends State<RegisterPage1> {
+  final _signUpFormKey = GlobalKey<FormState>();
+  final _signInFormKey = GlobalKey<FormState>();
+  final AuthService authService = AuthService();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _addressController = TextEditingController();
   @override
+  void dispose() {
+    super.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    _nameController.dispose();
+  }
+
+  void signUpUser() {
+    authService.signupUser(
+      context: context,
+      email: _emailController.text,
+      password: _passwordController.text,
+      fullName: _nameController.text,
+      phone: _phoneController.text,
+      address: _addressController.text
+    );
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
@@ -66,103 +95,32 @@ class _RegisterPage1State extends State<RegisterPage1> {
                     height: 30,
                   ),
                   Container(
-                    height: 40,
-                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                    child: Material(
-                      //elevation: 5,
-                      child: TextFormField(
-                        onSaved: (value) {
-                          //username = value!;
-                        },
-                        decoration: InputDecoration(
-                          icon: const Icon(Icons.person, color: Colors.blue),
-                          labelText: 'Full Name',
-                          hintText: 'Enter fullname here',
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: Color(0xfffb5607), width: 2.0),
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+
+                    child: Form(
+                      key: _signUpFormKey,
+                      child: Column(
+                      children: [
+                           CustomeTextField(
+                           controller1: _nameController, 
+                      labelText: 'FullName', hintText: 'Enter full name'),
                   const SizedBox(
                     height: 15,
                   ),
-                  Container(
-                    height: 40,
-                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                    child: Material(
-                      //elevation: 5,
-                      child: TextFormField(
-                        onSaved: (value) {
-                          //email = value!;
-                        },
-                        decoration: InputDecoration(
-                          icon: const Icon(Icons.email, color: Colors.blue),
-                          labelText: 'Email',
-                          hintText: 'Enter email here',
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: Color(0xfffb5607), width: 2.0),
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  CustomeTextField(
+                      controller1: _emailController,
+                      labelText: 'Email', hintText: 'Enter email here'),
                   const SizedBox(
                     height: 15,
                   ),
-                  Container(
-                    height: 40,
-                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                    child: Material(
-                      //elevation: 5,
-                      child: TextFormField(
-                        onSaved: (value) {
-                          //phone = value!;
-                        },
-                        decoration: InputDecoration(
-                          icon: const Icon(Icons.phone, color: Colors.blue),
-                          labelText: 'Phone',
-                          hintText: 'Enter phone here',
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: Color(0xfffb5607), width: 2.0),
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                   CustomeTextField(
+                    controller1: _phoneController,
+                      labelText: 'Phone', hintText: 'Enter phone here'),
                   const SizedBox(
                     height: 15,
                   ),
-                  Container(
-                    height: 40,
-                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                    child: Material(
-                      //elevation: 5,
-                      child: TextFormField(
-                        onSaved: (value) {
-                          //phone = value!;
-                        },
-                        decoration: InputDecoration(
-                          icon: const Icon(Icons.location_city,
-                              color: Colors.blue),
-                          labelText: 'Address',
-                          hintText: 'Enter address here',
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                                color: Color(0xfffb5607), width: 2.0),
-                            borderRadius: BorderRadius.circular(5.0),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  CustomeTextField(
+                    controller1: _addressController,
+                      labelText: 'Address', hintText: 'Enter address here'),
                   const SizedBox(
                     height: 15,
                   ),
@@ -172,6 +130,7 @@ class _RegisterPage1State extends State<RegisterPage1> {
                     child: Material(
                       //elevation: 5,
                       child: TextFormField(
+                        controller: _passwordController,
                         onSaved: (value) {
                           //password = value!;
                         },
@@ -186,30 +145,34 @@ class _RegisterPage1State extends State<RegisterPage1> {
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                         ),
+                        validator: (val) {
+            if (val == null || val.isEmpty) {
+              return 'Enter password';
+            }
+            return null;
+          },
                       ),
                     ),
                   ),
+
+                      ],
+
+
+                    )),
+                  ),
+
                   const SizedBox(
                     height: 10,
                   ),
                   Container(
-                    padding: EdgeInsets.only(left: 20),
+                    padding: const EdgeInsets.only(left: 20),
                   ),
-                  ElevatedButton(
-                    onPressed: () async {
-                      Navigator.pushNamed(context, '/otp1');
-                    },
-                    child: const Text('SignUp',
-                        style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.bold)),
-                    style: ElevatedButton.styleFrom(
-                      elevation: 10,
-                      primary: Colors.blue,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      minimumSize: const Size(150, 40),
-                    ),
-                  ),
+                  CustomButton(text: 'Signup', onTap: (){
+                    if (_signUpFormKey.currentState!.validate()) {
+                              signUpUser();
+                    }
+                   // Navigator.pushNamed(context, '/otp1');
+                  }),
                   const SizedBox(
                     height: 10,
                   ),
