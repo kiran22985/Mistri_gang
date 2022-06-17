@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mistri/common/widgets/bottom_bar.dart';
 import 'package:mistri/features/auth/screen/chooseaccount.dart';
 import 'package:mistri/features/auth/screen/homepage.dart';
 import 'package:mistri/features/auth/screen/login.dart';
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
         '/proreg1': (context) => const ProRegPage1(),
         '/proreg2': (context) => const ProRegPage2(),
         '/proreg4': (context) => const ProRegPage4(),
+        '/bottombar':(context)=>const BottonBar()
       },
     );
   }
