@@ -103,7 +103,7 @@ class AuthService {
                     actions: <Widget>[
                       TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/home');
+                          Navigator.pushNamed(context, '/bottombar');
                         },
                         child: const Text("Ok"),
                       ),

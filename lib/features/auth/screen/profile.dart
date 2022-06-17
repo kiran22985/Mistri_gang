@@ -3,12 +3,16 @@ import 'package:mistri/constants/global_variables.dart';
 // import 'package:amazon_clone_tutorial/features/account/widgets/orders.dart';
 // import 'package:amazon_clone_tutorial/features/account/widgets/top_buttons.dart';
 import 'package:flutter/material.dart';
+//import 'package:mistri/features/auth/screen/below_app_bar.dart';
+import 'package:mistri/provider/user_provider.dart';
 
+import 'package:provider/provider.dart';
 class AccountScreen extends StatelessWidget {
   const AccountScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<UserProvider>(context).user;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(50),
@@ -23,16 +27,13 @@ class AccountScreen extends StatelessWidget {
             children: [
               Container(
                 alignment: Alignment.topLeft,
-                child: Image.asset(
-                  'assets/images/amazon_in.png',
-                  width: 120,
-                  height: 45,
-                  color: Colors.black,
-                ),
+                child: const Text('Mistri.com',style:TextStyle(
+                  fontWeight: FontWeight.bold,color:Colors.black,
+                )),
               ),
               Container(
                 padding: const EdgeInsets.only(left: 15, right: 15),
-                child: Row(
+                child: Row( 
                   children: const [
                     Padding(
                       padding: EdgeInsets.only(right: 15),
@@ -48,15 +49,92 @@ class AccountScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        // children: const [
-        //   BelowAppBar(),
-        //   SizedBox(height: 10),
-        //   TopButtons(),
-        //   SizedBox(height: 20),
-        //   Orders(),
-        // ],
-      ),
+      body: ListView(
+          
+          padding: const EdgeInsets.only(top:10),
+          children: [
+            Container(
+              width: double.infinity,
+              height: 150,
+              color: Colors.greenAccent,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Welcome,"+user.fullName,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold
+                  ),),
+                  SizedBox(height: 10,),
+                  Text(user.email)
+                ],
+              ),
+            ),
+            //  UserAccountsDrawerHeader(
+            //   accountName: Text(
+            //     user.fullName,
+            //     style: const TextStyle(
+            //       fontWeight: FontWeight.bold,
+            //     ),
+            //   ),
+            //   accountEmail: Text(
+            //     user.email,
+            //     style: const TextStyle(
+            //       fontWeight: FontWeight.bold,
+            //     ),
+            //   ),
+            //   //currentAccountPicture: CircleAvatar(),
+            // ),
+            ListTile(
+              leading: const Icon(Icons.description),
+              title: const Text('About Mistri'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.people),
+              title: const Text('Register as Proffesional'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.share),
+              title: const Text('Share Mistri'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.rate_review),
+              title: const Text('Rate Us'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.calendar_view_month),
+              title: const Text('Sheduled Booking'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.settings),
+              title: const Text('Settings'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.logout,
+              ),
+              title: const Text('Logout'),
+              onTap: () {},
+            ),
+          ],
+        ),
+      // body: Column(
+      //   children: const [
+      //     BelowAppBar(),
+      //     SizedBox(height: 10),
+      //     //TopButtons(),
+      //     //SizedBox(height: 20),
+      //     //Orders(),
+          
+      //   ],
+      // ),
     );
   }
 }
