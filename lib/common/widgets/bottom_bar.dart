@@ -33,8 +33,7 @@ class _BottonBarState extends State<BottonBar> {
   }
   @override
   Widget build(BuildContext context) {
-    return 
-        Scaffold(
+    return Scaffold(
           body: pages[_page],
           bottomNavigationBar: BottomNavigationBar(
             

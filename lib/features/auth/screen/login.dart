@@ -131,6 +131,7 @@ class _LoginPageState extends State<LoginPage> {
                           if (_signInFormKey.currentState!.validate()) {
                             signInUser();
                           }
+                          Navigator.pushNamed(context, '/home');
                         }),
                     const SizedBox(
                       height: 10,
