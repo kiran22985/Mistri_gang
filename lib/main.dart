@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mistri/common/widgets/bottom_bar.dart';
+import 'package:mistri/features/auth/screen/aboutpage.dart';
 import 'package:mistri/features/auth/screen/chooseaccount.dart';
 import 'package:mistri/features/auth/screen/homepage.dart';
 import 'package:mistri/features/auth/screen/login.dart';
@@ -7,11 +8,13 @@ import 'package:mistri/features/auth/screen/otp1.dart';
 import 'package:mistri/features/auth/screen/otp2.dart';
 import 'package:mistri/features/auth/screen/proregpage1.dart';
 import 'package:mistri/features/auth/screen/proregpage2.dart';
+import 'package:mistri/features/auth/screen/proregpage3.dart';
 import 'package:mistri/features/auth/screen/proregpage4.dart';
 import 'package:mistri/features/auth/screen/register.dart';
 import 'package:mistri/features/auth/screen/resetpass1.dart';
 import 'package:mistri/features/auth/screen/resetpass2.dart';
 import 'package:mistri/features/auth/screen/resetpass3.dart';
+import 'package:mistri/features/auth/screen/service_page1.dart';
 import 'package:mistri/features/auth/screen/verified.dart';
 import 'package:mistri/features/auth/screen/welcome.dart';
 import 'package:mistri/provider/user_provider.dart';
@@ -37,7 +40,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/login',
+      initialRoute: '/bottombar',
       routes: {
         '/': (context) => const WelcomePage(),
         '/home': (context) => const HomePage(),
@@ -52,8 +55,11 @@ class MyApp extends StatelessWidget {
         '/reset3': (context) => const ResetPage3(),
         '/proreg1': (context) => const ProRegPage1(),
         '/proreg2': (context) => const ProRegPage2(),
+        '/proreg3':(context)=>const ProRegPage3(),
         '/proreg4': (context) => const ProRegPage4(),
-        '/bottombar':(context)=>const BottonBar()
+        '/bottombar':(context)=>const BottonBar(),
+        '/about':(context)=>const About(),
+        '/servicepage1':(context)=>SErvicePage1()
       },
     );
   }

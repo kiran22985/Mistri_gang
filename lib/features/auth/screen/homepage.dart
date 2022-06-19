@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'package:mistri/constants/global_variables.dart';
 import 'package:mistri/features/auth/screen/address_box.dart';
-import 'package:mistri/features/auth/screen/below_app_bar.dart';
+//import 'package:mistri/features/auth/screen/below_app_bar.dart';
 import 'package:mistri/features/auth/screen/carousel_image.dart';
-import 'package:mistri/features/auth/screen/drawerpage.dart';
+//import 'package:mistri/features/auth/screen/drawerpage.dart';
+import 'package:mistri/features/auth/screen/service_page1.dart';
+import 'package:mistri/features/auth/screen/service_page2.dart';
+import 'package:mistri/features/auth/screen/top_categories.dart';
+import 'package:mistri/features/auth/screen/top_categories_second.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({ Key? key }) : super(key: key);
@@ -17,6 +21,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       //drawer: const Mydrawer(),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
@@ -70,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                             width: 1,
                           ),
                         ),
-                        hintText: 'Search mistri.com',
+                        hintText: 'Search for services and packages',
                         hintStyle: const TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 17,
@@ -92,13 +97,39 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: const [
-            AddressBox(),
+          children:  [
+            const AddressBox(),
+            const CarouselImage(),
+            const SizedBox(height:20),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //   children: [
+            //     const Text('Services',style: TextStyle(
+            //       fontWeight: FontWeight.bold,
+            //       fontSize: 15
+            //                   ),
+            //             ),
+            //     InkWell(
+            //       onTap: (){},
+            //       child: const Text('view all',style: TextStyle(
+            //                     color: Colors.blue,
+            //                     fontSize: 15,
+            //                     decoration: TextDecoration.underline),
+            //               ),
+            //     )
+            //   ],
+            // ),
+            // const SizedBox(height: 20),
+            const TopCategories(),
+            //const SizedBox(height: 10),
+            //const TopCategories2(),
+            const SizedBox(height: 10,),
+            SErvicePage1(),
+            const SizedBox(height: 10,),
+            ServicePage2()
+
             
-            //TopCategories(),
-            //SizedBox(height: 10),
-            CarouselImage(),
-            //DealOfDay(), 
+            
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mistri/common/widgets/custom_button.dart';
 
 class ProRegPage1 extends StatefulWidget {
   const ProRegPage1({ Key? key }) : super(key: key);
@@ -12,109 +13,35 @@ class _ProRegPage1State extends State<ProRegPage1> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        body: Center(
-            child: SafeArea(
-          child: Container(
-              margin: const EdgeInsets.only(top: 40),
-              child: Column(
-                children: [
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    Container(
-                      alignment: Alignment.center,
-                      width: 30,
-                      height: 30,
-                      color: Colors.blue,
-                      child: const Text(
-                        'M',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 30,
-                    ),
-                    const Text(
-                      'Welcome To Mistri',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                    ),
-                  ]),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const Text(
-                    'Creat An Account',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  const Text(
-                    'Select your city',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/images/flag.jpg',
-                        height: 50,
-                        width: 50,
-                      ),
-                      const Text(
-                        'Nepal    ',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    child: Column(children: [
-                      InkWell(
-                        child: const Text(
-                          '>  Kathmandu',
-                          style: TextStyle(color: Colors.blue, fontSize: 16),
-                        ),
-                        onTap: () {
-                          Navigator.pushNamed(context, '/proreg2');
-                        },
-                      ),
-                      InkWell(
-                        child: const Text(
-                          '>  Bhaktapur',
-                          style: TextStyle(color: Colors.blue, fontSize: 16),
-                        ),
-                        onTap: () {
-                          Navigator.pushNamed(context, '/proreg2');
-                        },
-                      ),
-                      InkWell(
-                        child: const Text(
-                          '>  Lalitpur',
-                          style: TextStyle(color: Colors.blue, fontSize: 16),
-                        ),
-                        onTap: () {
-                          Navigator.pushNamed(context, '/proreg2');
-                        },
-                      ),
-                      InkWell(
-                        child: const Text(
-                          '>  Dhulikhel',
-                          style: TextStyle(color: Colors.blue, fontSize: 16),
-                        ),
-                        onTap: () {
-                          Navigator.pushNamed(context, '/proreg2');
-                        },
-                      ),
-                    ]),
-                  ),
-                ],
-              )),
+        body: SafeArea(child: Column(
+          children: [
+            Stack(children: [
+              Container(child: Image(image: AssetImage('assets/images/proauth.png')),
+              ),
+              Container(
+                padding:EdgeInsets.fromLTRB(50, 370, 30, 10),
+                child: Text('Ready to earn more?\n Join professionals and earn more',textAlign: TextAlign.center,style:TextStyle(
+                  color:Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold
+                )),
+              )
+            ],),
+            SizedBox(height: 50,),
+            Text('Create account/ Login into system',style:TextStyle(
+                  
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold
+                )),
+                SizedBox(height:20),
+             CustomButton(text: 'SignUp', onTap: (){
+                    Navigator.pushNamed(context, '/proreg2');
+                  }),
+                  SizedBox(height:20),
+             CustomButton(text: 'Login', onTap: (){
+                    Navigator.pushNamed(context, '/login');
+                  })    
+          ],
         )));
   }
 }

@@ -197,7 +197,7 @@ class _ProRegPage2State extends State<ProRegPage2> {
                   ),
                   ElevatedButton(
                     onPressed: () async {
-                      Navigator.pushNamed(context, '/proreg4');
+                      Navigator.pushNamed(context, '/proreg3');
                     },
                     child: const Text('Next >',
                         style: TextStyle(

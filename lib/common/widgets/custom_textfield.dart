@@ -18,7 +18,7 @@ class CustomeTextField extends StatelessWidget {
       keyboardType: TextInputType.text,
       controller: controller1,
       decoration: InputDecoration(
-        icon: const Icon(Icons.person, color: Colors.blue),
+        //icon: const Icon(Icons.person, color: Colors.blue),
         labelText: labelText,
         hintText: hintText,
         border: OutlineInputBorder(

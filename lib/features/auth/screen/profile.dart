@@ -51,7 +51,7 @@ class AccountScreen extends StatelessWidget {
       ),
       body: ListView(
           
-          padding: const EdgeInsets.only(top:10),
+          //padding: const EdgeInsets.only(top:10),
           children: [
             Container(
               width: double.infinity,
@@ -89,7 +89,9 @@ class AccountScreen extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.description),
               title: const Text('About Mistri'),
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/about');
+              },
             ),
             ListTile(
               leading: const Icon(Icons.people),
