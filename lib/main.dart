@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/bottombar',
+      initialRoute: '/',
       routes: {
         '/': (context) => const WelcomePage(),
         '/home': (context) => const HomePage(),
