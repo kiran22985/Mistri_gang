@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mistri/common/widgets/custom_button.dart';
 import 'package:mistri/constants/global_variables.dart';
 
-class ServicePage2 extends StatelessWidget {
-  const ServicePage2({ Key? key }) : super(key: key);
+class ServicePage3 extends StatelessWidget {
+  const ServicePage3({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,17 +11,17 @@ class ServicePage2 extends StatelessWidget {
       elevation: 20,
       child: Column(
         children: [
-          SizedBox(height: 20,),    
+          const SizedBox(height: 20,),    
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Carpenter, Plumber & Electrician',style:TextStyle(
+              const Text('Cleaning & pest control',style:TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold
               )),
               InkWell(
                   onTap: (){
-                    Navigator.pushNamed(context, '/viewservice2');
+                    Navigator.pushNamed(context, '/viewservice3');
                   },
                   child: const Text('view all',style: TextStyle(
                                 color: Colors.blue,
@@ -31,12 +31,12 @@ class ServicePage2 extends StatelessWidget {
                 )
             ],
           ),
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
           Container(
             height: 380,
             child: GridView.builder(
-                  itemCount: GlobalVariables.ServiceImages2.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  itemCount: GlobalVariables.ServiceImages3.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 10.0,
                     childAspectRatio: 1.1
@@ -55,15 +55,15 @@ class ServicePage2 extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Image.asset(
-                      GlobalVariables.ServiceImages2[index]['image']!,
+                      GlobalVariables.ServiceImages3[index]['image']!,
                       fit: BoxFit.cover,
                       height: 150,
                       width: 200,
                     ),
                   ),
-                  SizedBox(height: 5,),
+                  //const SizedBox(height: 5,),
                   Text(
-                    GlobalVariables.ServiceImages2[index]['title']!,
+                    GlobalVariables.ServiceImages3[index]['title']!,
                     style: const TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.bold
@@ -79,7 +79,7 @@ class ServicePage2 extends StatelessWidget {
                 ),
               ),
               CustomButton(text: 'View all services', onTap: (){
-                    Navigator.pushNamed(context, '/viewservice2');
+                    Navigator.pushNamed(context, '/viewservice3');
                   })
         ],
       ),

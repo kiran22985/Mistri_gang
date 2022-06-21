@@ -16,6 +16,9 @@ import 'package:mistri/features/auth/screen/resetpass2.dart';
 import 'package:mistri/features/auth/screen/resetpass3.dart';
 import 'package:mistri/features/auth/screen/service_page1.dart';
 import 'package:mistri/features/auth/screen/verified.dart';
+import 'package:mistri/features/auth/screen/view_service1.dart';
+import 'package:mistri/features/auth/screen/view_service2.dart';
+import 'package:mistri/features/auth/screen/view_service3.dart';
 import 'package:mistri/features/auth/screen/welcome.dart';
 import 'package:mistri/provider/user_provider.dart';
 import 'package:provider/provider.dart';
@@ -59,7 +62,11 @@ class MyApp extends StatelessWidget {
         '/proreg4': (context) => const ProRegPage4(),
         '/bottombar':(context)=>const BottonBar(),
         '/about':(context)=>const About(),
-        '/servicepage1':(context)=>SErvicePage1()
+        '/servicepage1':(context)=>SErvicePage1(),
+        '/viewservice1':(context)=>const ViewService1(),
+        '/viewservice2':(context)=>const ViewService2(),
+        '/viewservice3':(context)=>const ViewService3(),
+
       },
     );
   }

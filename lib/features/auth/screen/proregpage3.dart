@@ -1,30 +1,48 @@
 import 'package:flutter/material.dart';
 
 class ProRegPage3 extends StatefulWidget {
-  const ProRegPage3({ Key? key }) : super(key: key);
+  const ProRegPage3({Key? key}) : super(key: key);
 
   @override
   State<ProRegPage3> createState() => _ProRegPage3State();
 }
 
 class _ProRegPage3State extends State<ProRegPage3> {
-  List<DropdownMenuItem<String>> get dropdownItems {
+  // Initial Selected Value
+  String selectedValue1 = "Select profession";
+  String selectedValue2 = "Select service time";
+  String selectedValue3 = "Select service charge";
+  List<DropdownMenuItem<String>> get dropdownItems1 {
     List<DropdownMenuItem<String>> menuItems = const [
-      DropdownMenuItem(
-        child: Text('prof1'),
-        value: 'prof1',
-      ),
-      DropdownMenuItem(
-        child: Text('prof2'),
-        value: 'prof2',
-      ),
-      DropdownMenuItem(
-        child: Text('prof3'),
-        value: 'prof3',
-      )
+      DropdownMenuItem(child: Text("Select profession"), value: "Select profession"),
+      DropdownMenuItem(child: Text("plumber"), value: "plumber"),
+      DropdownMenuItem(child: Text("carpenter"), value: "carpenter"),
+      DropdownMenuItem(child: Text("electrician"), value: "electrician"),
+      DropdownMenuItem(child: Text("Beautician"), value: "Beautician"),
     ];
     return menuItems;
   }
+  List<DropdownMenuItem<String>> get dropdownItems2 {
+    List<DropdownMenuItem<String>> menuItems = const [
+      DropdownMenuItem(child: Text("Select service time"), value: "Select service time"),
+      DropdownMenuItem(child: Text("10Am"), value: "10Am"),
+      DropdownMenuItem(child: Text("11Am"), value: "11Am"),
+      DropdownMenuItem(child: Text("12Pm"), value: "12Pm"),
+      //DropdownMenuItem(child: Text("1Pm"), value: "12Pm"),
+    ];
+    return menuItems;
+  }
+  List<DropdownMenuItem<String>> get dropdownItems3 {
+    List<DropdownMenuItem<String>> menuItems = const [
+      DropdownMenuItem(child: Text("Select service charge"), value: "Select service charge"),
+      DropdownMenuItem(child: Text("200"), value: "200"),
+      DropdownMenuItem(child: Text("400"), value: "400"),
+      DropdownMenuItem(child: Text("400"), value: "400"),
+      DropdownMenuItem(child: Text("500"), value: "500"),
+    ];
+    return menuItems;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,78 +95,68 @@ class _ProRegPage3State extends State<ProRegPage3> {
                   const SizedBox(
                     height: 30,
                   ),
-                  // Container(
-                  //   height: 40,
-                  //   margin: const EdgeInsets.only(left: 60, right: 20),
-                  //   padding: const EdgeInsets.only(left: 16, right: 16),
-                  //   decoration: BoxDecoration(
-                  //       border: Border.all(color: Colors.grey, width: 1),
-                  //       borderRadius: BorderRadius.circular(5)),
-                  //   child: DropdownButtonFormField(
-                  //       icon: const Icon(Icons.arrow_drop_down),
-                  //       iconSize: 32,
-                  //       style:
-                  //           const TextStyle(fontSize: 18, color: Colors.black),
-                  //       decoration: const InputDecoration.collapsed(
-                  //           hintText: 'Select Profession'),
-                  //       value: selectedValue,
-                  //       onChanged: (String? newValue) {
-                  //         setState(() {
-                  //           selectedValue = newValue!;
-                  //         });
-                  //       },
-                  //       items: dropdownItems),
-                  // ),
-                  // const SizedBox(
-                  //   height: 10,
-                  // ),
-                  // Container(
-                  //   height: 40,
-                  //   margin: const EdgeInsets.only(left: 60, right: 20),
-                  //   padding: const EdgeInsets.only(left: 16, right: 16),
-                  //   decoration: BoxDecoration(
-                  //       border: Border.all(color: Colors.grey, width: 1),
-                  //       borderRadius: BorderRadius.circular(5)),
-                  //   child: DropdownButtonFormField(
-                  //       icon: const Icon(Icons.arrow_drop_down),
-                  //       iconSize: 32,
-                  //       style:
-                  //           const TextStyle(fontSize: 18, color: Colors.black),
-                  //       decoration: const InputDecoration.collapsed(
-                  //           hintText: 'Select Profession'),
-                  //       value: selectedValue,
-                  //       onChanged: (String? newValue) {
-                  //         setState(() {
-                  //           selectedValue = newValue!;
-                  //         });
-                  //       },
-                  //       items: dropdownItems),
-                  // ),
-                  // const SizedBox(
-                  //   height: 15,
-                  // ),
-                  // Container(
-                  //   height: 40,
-                  //   margin: const EdgeInsets.only(left: 60, right: 20),
-                  //   padding: const EdgeInsets.only(left: 16, right: 16),
-                  //   decoration: BoxDecoration(
-                  //       border: Border.all(color: Colors.grey, width: 1),
-                  //       borderRadius: BorderRadius.circular(5)),
-                  //   child: DropdownButtonFormField(
-                  //       icon: const Icon(Icons.arrow_drop_down),
-                  //       iconSize: 32,
-                  //       style:
-                  //           const TextStyle(fontSize: 18, color: Colors.black),
-                  //       decoration: const InputDecoration.collapsed(
-                  //           hintText: 'Select Profession'),
-                  //       value: selectedValue,
-                  //       onChanged: (String? newValue) {
-                  //         setState(() {
-                  //           selectedValue = newValue!;
-                  //         });
-                  //       },
-                  //       items: dropdownItems),
-                  // ),
+                  Container(
+                    height: 50,
+                    width: 350,
+                    margin: const EdgeInsets.only(left: 60, right: 20),
+                    padding: const EdgeInsets.only(left:60),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey, width: 1),
+                        borderRadius: BorderRadius.circular(5)),
+                    child: DropdownButton(
+                      //style: const TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),
+                        value: selectedValue1,
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            selectedValue1 = newValue!;
+                          });
+                        },
+                        items: dropdownItems1),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 50,
+                    width: 350,
+                    margin: const EdgeInsets.only(left: 60, right: 20),
+                    padding: const EdgeInsets.only(left: 60,),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey, width: 1),
+                        borderRadius: BorderRadius.circular(5)),
+                    child: DropdownButton(
+                         //style: const TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),
+                        value: selectedValue2,
+                        //dropdownColor: Colors.green,
+                        //icon: const Icon(Icons.flag),
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            selectedValue2 = newValue!;
+                          });
+                        },
+                        items: dropdownItems2),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Container(
+                    height: 50,
+                    width: 350,
+                    margin: const EdgeInsets.only(left: 60, right: 20),
+                    padding: const EdgeInsets.only(left: 60,),
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey, width: 1),
+                        borderRadius: BorderRadius.circular(5)),
+                    child: DropdownButton(
+                      //style: const TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),
+                        value: selectedValue3,
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            selectedValue3 = newValue!;
+                          });
+                        },
+                        items: dropdownItems3),
+                  ),
                   const SizedBox(
                     height: 15,
                   ),

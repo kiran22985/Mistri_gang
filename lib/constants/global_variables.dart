@@ -90,4 +90,43 @@ class GlobalVariables{
     },
     
   ];
+
+  static const List<Map<String, String>> ServiceImages2 = [
+    {
+      'title': 'Carpenters',
+      'image': 'assets/images/carpenter.png',
+    },
+    {
+      'title': 'Plumbers',
+      'image': 'assets/images/plumbers.png',
+    },
+    {
+      'title': 'Electricians',
+      'image': 'assets/images/electrician.png',
+    },
+    {
+      'title': 'Furniture making',
+      'image': 'assets/images/furniture.png',
+    },
+    
+  ];
+  static const List<Map<String, String>> ServiceImages3 = [
+    {
+      'title': 'Bathroom and kitchen',
+      'image': 'assets/images/bathroom.png',
+    },
+    {
+      'title': 'Full Home cleaning',
+      'image': 'assets/images/fullhome.png',
+    },
+    {
+      'title': 'Sofa and carpet cleaning',
+      'image': 'assets/images/sofa.png',
+    },
+    {
+      'title': 'Disinfection services',
+      'image': 'assets/images/disinfection.png',
+    },
+    
+  ];
 }

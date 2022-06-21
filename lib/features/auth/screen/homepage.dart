@@ -7,11 +7,12 @@ import 'package:mistri/features/auth/screen/carousel_image.dart';
 //import 'package:mistri/features/auth/screen/drawerpage.dart';
 import 'package:mistri/features/auth/screen/service_page1.dart';
 import 'package:mistri/features/auth/screen/service_page2.dart';
+import 'package:mistri/features/auth/screen/service_page3.dart';
 import 'package:mistri/features/auth/screen/top_categories.dart';
 import 'package:mistri/features/auth/screen/top_categories_second.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({ Key? key }) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -36,6 +37,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               Expanded(
                 child: Container(
+                  
                   height: 42,
                   margin: const EdgeInsets.only(left: 15),
                   child: Material(
@@ -97,43 +99,26 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children:  [
+          children: [
             const AddressBox(),
             const CarouselImage(),
-            const SizedBox(height:20),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //   children: [
-            //     const Text('Services',style: TextStyle(
-            //       fontWeight: FontWeight.bold,
-            //       fontSize: 15
-            //                   ),
-            //             ),
-            //     InkWell(
-            //       onTap: (){},
-            //       child: const Text('view all',style: TextStyle(
-            //                     color: Colors.blue,
-            //                     fontSize: 15,
-            //                     decoration: TextDecoration.underline),
-            //               ),
-            //     )
-            //   ],
-            // ),
-            // const SizedBox(height: 20),
+            const SizedBox(height: 20),
             const TopCategories(),
-            //const SizedBox(height: 10),
-            //const TopCategories2(),
-            const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             SErvicePage1(),
-            const SizedBox(height: 10,),
-            ServicePage2()
-
-            
-            
+            const SizedBox(
+              height: 10,
+            ),
+            const ServicePage2(),
+            const SizedBox(
+              height: 10,
+            ),
+            const ServicePage3()
           ],
         ),
       ),
-      
     );
   }
 }

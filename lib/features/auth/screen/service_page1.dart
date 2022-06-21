@@ -16,12 +16,14 @@ class SErvicePage1 extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('Women\'s salon and spa',style:TextStyle(
+              const Text('Women\'s salon and spa',style:TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold
               )),
               InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    Navigator.pushNamed(context, '/viewservice1');
+                  },
                   child: const Text('view all',style: TextStyle(
                                 color: Colors.blue,
                                 fontSize: 15,
@@ -35,7 +37,7 @@ class SErvicePage1 extends StatelessWidget {
             height: 380,
             child: GridView.builder(
                   itemCount: GlobalVariables.ServiceImages1.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 10.0,
                     childAspectRatio: 1.1
@@ -78,7 +80,7 @@ class SErvicePage1 extends StatelessWidget {
                 ),
               ),
               CustomButton(text: 'View all services', onTap: (){
-                    //Navigator.pushNamed(context, '/accountchoose');
+                    Navigator.pushNamed(context, '/viewservice1');
                   })
         ],
       ),
