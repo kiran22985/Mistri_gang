@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProRegPage4 extends StatefulWidget {
+  static const String routeName = '/proreg4';
   const ProRegPage4({ Key? key }) : super(key: key);
 
   @override

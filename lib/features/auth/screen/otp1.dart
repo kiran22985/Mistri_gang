@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mistri/common/widgets/custom_button.dart';
 
 class OTP1 extends StatefulWidget {
+  static const String routeName = '/otp1';
   const OTP1({ Key? key }) : super(key: key);
 
   @override

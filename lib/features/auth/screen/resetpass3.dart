@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ResetPage3 extends StatefulWidget {
+  static const String routeName = '/reset3';
   const ResetPage3({ Key? key }) : super(key: key);
 
   @override

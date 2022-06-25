@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AccountChosePage extends StatefulWidget {
+  static const String routeName = '/accountchoose';
   const AccountChosePage({ Key? key }) : super(key: key);
 
   @override

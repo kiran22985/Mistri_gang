@@ -7,6 +7,7 @@ import 'package:mistri/features/auth/screen/profile.dart';
 import 'package:mistri/features/auth/screen/cart_screen.dart';
 
 class BottonBar extends StatefulWidget {
+  static const String routeName = '/bottombar';
   const BottonBar({ Key? key }) : super(key: key);
 
   @override

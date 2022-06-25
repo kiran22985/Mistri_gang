@@ -11,7 +11,9 @@ import 'package:mistri/features/auth/screen/service_page3.dart';
 import 'package:mistri/features/auth/screen/top_categories.dart';
 import 'package:mistri/features/auth/screen/top_categories_second.dart';
 
+
 class HomePage extends StatefulWidget {
+  static const String routeName = '/home';
   const HomePage({Key? key}) : super(key: key);
 
   @override

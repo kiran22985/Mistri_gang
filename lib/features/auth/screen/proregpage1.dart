@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mistri/common/widgets/custom_button.dart';
 
 class ProRegPage1 extends StatefulWidget {
+  static const String routeName = '/proreg1';
   const ProRegPage1({ Key? key }) : super(key: key);
 
   @override

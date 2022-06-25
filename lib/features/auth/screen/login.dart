@@ -4,6 +4,7 @@ import 'package:mistri/common/widgets/custom_textfield.dart';
 import 'package:mistri/features/auth/services/auth_services.dart';
 
 class LoginPage extends StatefulWidget {
+  static const String routeName = '/login';
   const LoginPage({Key? key}) : super(key: key);
 
   @override

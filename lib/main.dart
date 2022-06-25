@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mistri/common/widgets/bottom_bar.dart';
 import 'package:mistri/features/auth/screen/aboutpage.dart';
+import 'package:mistri/features/auth/screen/admin_screen.dart';
 import 'package:mistri/features/auth/screen/chooseaccount.dart';
 import 'package:mistri/features/auth/screen/homepage.dart';
 import 'package:mistri/features/auth/screen/login.dart';
@@ -21,6 +22,7 @@ import 'package:mistri/features/auth/screen/view_service2.dart';
 import 'package:mistri/features/auth/screen/view_service3.dart';
 import 'package:mistri/features/auth/screen/welcome.dart';
 import 'package:mistri/provider/user_provider.dart';
+import 'package:mistri/router.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -43,31 +45,39 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const WelcomePage(),
-        '/home': (context) => const HomePage(),
-        '/accountchoose': (context) => const AccountChosePage(),
-        '/register1': (context) => const RegisterPage1(),
-        '/otp1': (context) => const OTP1(),
-        '/otp2': (context) => const OTP2(),
-        '/login': (context) => const LoginPage(),
-        '/verified': (context) => const VerifiedPage(),
-        '/reset1': (context) => const ResetPage1(),
-        '/reset2': (context) => const ResetPage2(),
-        '/reset3': (context) => const ResetPage3(),
-        '/proreg1': (context) => const ProRegPage1(),
-        '/proreg2': (context) => const ProRegPage2(),
-        '/proreg3':(context)=>const ProRegPage3(),
-        '/proreg4': (context) => const ProRegPage4(),
-        '/bottombar':(context)=>const BottonBar(),
-        '/about':(context)=>const About(),
-        '/servicepage1':(context)=>SErvicePage1(),
-        '/viewservice1':(context)=>const ViewService1(),
-        '/viewservice2':(context)=>const ViewService2(),
-        '/viewservice3':(context)=>const ViewService3(),
+      onGenerateRoute: (settings) => generateRoute(settings),
+       home: Provider.of<UserProvider>(context).user.type == 'user'
+              ? const WelcomePage() 
+              : const AdminScreen()
+              
+          
+      // initialRoute: '/',
+      // routes: {
+      //   '/': (context) => const WelcomePage(),
+      //   '/home': (context) => const HomePage(),
+      //   '/accountchoose': (context) => const AccountChosePage(),
+      //   '/register1': (context) => const RegisterPage1(),
+      //   '/otp1': (context) => const OTP1(),
+      //   '/otp2': (context) => const OTP2(),
+      //   '/login': (context) => const LoginPage(),
+      //   '/verified': (context) => const VerifiedPage(),
+      //   '/reset1': (context) => const ResetPage1(),
+      //   '/reset2': (context) => const ResetPage2(),
+      //   '/reset3': (context) => const ResetPage3(),
+      //   '/proreg1': (context) => const ProRegPage1(),
+      //   '/proreg2': (context) => const ProRegPage2(),
+      //   '/proreg3':(context)=>const ProRegPage3(),
+      //   '/proreg4': (context) => const ProRegPage4(),
+      //   '/bottombar':(context)=>const BottonBar(),
+      //   '/about':(context)=>const About(),
+      //   '/servicepage1':(context)=>SErvicePage1(),
+      //   '/viewservice1':(context)=>const ViewService1(),
+      //   '/viewservice2':(context)=>const ViewService2(),
+      //   '/viewservice3':(context)=>const ViewService3(),
+      //   '/admin':(context)=>const AdminScreen(),
 
-      },
+
+      // },
     );
   }
 }

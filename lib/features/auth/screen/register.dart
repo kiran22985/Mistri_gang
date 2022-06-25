@@ -4,6 +4,7 @@ import 'package:mistri/common/widgets/custom_button.dart';
 import 'package:mistri/features/auth/services/auth_services.dart';
 
 class RegisterPage1 extends StatefulWidget {
+  static const String routeName = '/register1';
   const RegisterPage1({Key? key}) : super(key: key);
 
   @override

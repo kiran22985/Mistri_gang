@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 class CustomeTextField extends StatelessWidget {
   final String labelText;
   final String hintText;
+   final int maxLines;
   final TextEditingController controller1;
   //final VoidCallback onSave;
   const CustomeTextField(
       {Key? key,
       required this.labelText,
       required this.hintText,
+      this.maxLines = 1,
       required this.controller1})
       : super(key: key);
 

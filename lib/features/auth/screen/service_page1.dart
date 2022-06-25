@@ -3,6 +3,7 @@ import 'package:mistri/common/widgets/custom_button.dart';
 import 'package:mistri/constants/global_variables.dart';
 
 class SErvicePage1 extends StatelessWidget {
+  static const String routeName = '/servicepage1';
    SErvicePage1({ Key? key }) : super(key: key);
 
   @override

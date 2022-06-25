@@ -11,7 +11,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 String uri = 'http://10.0.2.2:3000';
 
+
 class AuthService {
+  
   void signupUser({
     required BuildContext context,
     required fullName,
@@ -27,7 +29,9 @@ class AuthService {
           password: password,
           email: email,
           address: address,
-          phone: phone);
+          phone: phone,
+          type: '',
+          token: '');
 
       http.Response res = await http.post(
         Uri.parse('$uri/custregister'),
@@ -53,7 +57,9 @@ class AuthService {
                     actions: <Widget>[
                       TextButton(
                         onPressed: () {
-                          Navigator.of(ctx).pop();
+                          Navigator.pushNamed(context, '/login');
+                          
+                          
                         },
                         child: Text("Ok"),
                       ),
@@ -68,9 +74,11 @@ class AuthService {
 
   // sign in user
   void signInUser({
+    
     required BuildContext context,
     required String email,
     required String password,
+    final user = Provider.of<UserProvider>
   }) async {
     try {
       http.Response res = await http.post(
@@ -104,6 +112,11 @@ class AuthService {
                       TextButton(
                         onPressed: () {
                           Navigator.pushNamed(context, '/bottombar');
+                          // if(user.type!='user'){
+                          //   Navigator.pushNamed(context, '/admin');
+                          // }else{
+                          //   Navigator.pushNamed(context, '/bottombar');
+                          // }
                         },
                         child: const Text("Ok"),
                       ),

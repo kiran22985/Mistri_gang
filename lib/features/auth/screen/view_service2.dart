@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mistri/constants/global_variables.dart';
 
 class ViewService2 extends StatefulWidget {
+  static const String routeName = '/viewservice2';
   const ViewService2({ Key? key }) : super(key: key);
 
   @override

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mistri/common/widgets/custom_button.dart';
 
 class WelcomePage extends StatelessWidget {
+  static const String routeName = '/';
   const WelcomePage({ Key? key }) : super(key: key);
 
   @override

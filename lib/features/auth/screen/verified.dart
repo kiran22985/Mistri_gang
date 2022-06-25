@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class VerifiedPage extends StatelessWidget {
+  static const String routeName = '/verified';
   const VerifiedPage({ Key? key }) : super(key: key);
 
   @override

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class OTP2 extends StatefulWidget {
+  static const String routeName = '/otp2';
   const OTP2({Key? key}) : super(key: key);
 
   @override

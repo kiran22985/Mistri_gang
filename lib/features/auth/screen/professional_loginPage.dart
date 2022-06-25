@@ -3,14 +3,15 @@ import 'package:mistri/common/widgets/custom_button.dart';
 import 'package:mistri/common/widgets/custom_textfield.dart';
 import 'package:mistri/features/auth/services/auth_services.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class Professional_LoginPage extends StatefulWidget {
+  static const String routeName = '/professionallogin';
+  const Professional_LoginPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<Professional_LoginPage> createState() => _Professional_LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _Professional_LoginPageState extends State<Professional_LoginPage> {
   final _signInFormKey = GlobalKey<FormState>();
   final AuthService authService = AuthService();
   final TextEditingController _emailController = TextEditingController();
