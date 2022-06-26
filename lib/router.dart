@@ -2,6 +2,7 @@ import 'package:mistri/common/widgets/bottom_bar.dart';
 import 'package:mistri/features/auth/screen/aboutpage.dart';
 import 'package:mistri/features/auth/screen/add_service_screen.dart';
 import 'package:mistri/features/auth/screen/address_box.dart';
+import 'package:mistri/features/auth/screen/category_deals_screen.dart';
 import 'package:mistri/features/auth/screen/login.dart';
 import 'package:mistri/features/auth/screen/admin_screen.dart';
 import 'package:mistri/features/auth/screen/below_app_bar.dart';
@@ -9,6 +10,7 @@ import 'package:mistri/features/auth/screen/carousel_image.dart';
 import 'package:mistri/features/auth/screen/cart_screen.dart';
 import 'package:mistri/features/auth/screen/chooseaccount.dart';
 import 'package:mistri/features/auth/screen/homepage.dart';
+
 import 'package:mistri/features/auth/screen/otp1.dart';
 import 'package:mistri/features/auth/screen/otp2.dart';
 import 'package:mistri/features/auth/screen/professional_loginpage.dart';
@@ -35,12 +37,12 @@ import 'package:mistri/features/auth/screen/welcome.dart';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
   switch (routeSettings.name) {
-    // case LoginPage.routeName:
-    //   //var product = routeSettings.arguments as Product;
-    //   return MaterialPageRoute(
-    //     settings: routeSettings,
-    //     builder: (_) => const LoginPage()
-    //   );
+    case CategoryDealsScreen.routeName:
+      var category = routeSettings.arguments as String;
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => CategoryDealsScreen(category: category)
+      );
     case WelcomePage.routeName:
       return MaterialPageRoute(
         settings: routeSettings,
@@ -167,6 +169,7 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         settings: routeSettings,
         builder: (_) => const AddServiceScreen(),
       );
+      
     default:
       return MaterialPageRoute(
         settings: routeSettings,

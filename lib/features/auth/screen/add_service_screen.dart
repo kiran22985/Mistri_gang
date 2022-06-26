@@ -7,6 +7,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:mistri/constants/utils.dart';
 import 'package:mistri/common/widgets/custom_button.dart';
 import 'package:mistri/common/widgets/custom_textfield.dart';
+import 'package:mistri/features/auth/services/admin_services.dart';
 class AddServiceScreen extends StatefulWidget {
   static const String routeName = '/add-service';
   const AddServiceScreen({ Key? key }) : super(key: key);
@@ -49,7 +50,7 @@ class _AddServiceScreenState extends State<AddServiceScreen> {
         name: productNameController.text,
         description: descriptionController.text,
         price: double.parse(priceController.text),
-        quantity: double.parse(quantityController.text),
+        time: double.parse(quantityController.text),
         category: category,
         images: images,
       );

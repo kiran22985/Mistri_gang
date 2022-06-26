@@ -5,11 +5,14 @@ const express=require('express');
 const mongoose=require('mongoose');
 mongoose.connect('mongodb://localhost:27017/Mistri_app');
 //=============
-const authRouter=require('./routes/auth'); 
+const authRouter=require('./routes/auth');
+const adminRouter=require('./routes/admin'); 
 const app=express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(authRouter);
+app.use(adminRouter);
+
 
 
 const PORT=3000;

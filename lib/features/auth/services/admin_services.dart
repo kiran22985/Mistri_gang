@@ -11,7 +11,7 @@ import 'package:cloudinary_public/cloudinary_public.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
-
+String uri = 'http://10.0.2.2:3000';
 class AdminServices {
   void sellProduct({
     required BuildContext context,
@@ -35,7 +35,7 @@ class AdminServices {
         imageUrls.add(res.secureUrl);
       }
 
-      Product product = Product(
+      Service product = Service(
         name: name,
         description: description,
         time: time,
@@ -45,7 +45,7 @@ class AdminServices {
       );
 
       http.Response res = await http.post(
-        Uri.parse('$uri/admin/add-product'),
+        Uri.parse('$uri/admin/add-service'),
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
           'x-auth-token': userProvider.user.token,
@@ -57,7 +57,7 @@ class AdminServices {
         response: res,
         context: context,
         onSuccess: () {
-          showSnackBar(context, 'Product Added Successfully!');
+          showSnackBar(context, 'Service Added Successfully!');
           Navigator.pop(context);
         },
       );
@@ -67,67 +67,67 @@ class AdminServices {
   }
 
   // get all the products
-  // Future<List<Product>> fetchAllProducts(BuildContext context) async {
-  //   final userProvider = Provider.of<UserProvider>(context, listen: false);
-  //   List<Product> productList = [];
-  //   try {
-  //     http.Response res =
-  //         await http.get(Uri.parse('$uri/admin/get-products'), headers: {
-  //       'Content-Type': 'application/json; charset=UTF-8',
-  //       'x-auth-token': userProvider.user.token,
-  //     });
+  Future<List<Service>> fetchAllProducts(BuildContext context) async {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    List<Service> serviceList = [];
+    try {
+      http.Response res =
+          await http.get(Uri.parse('$uri/admin/get-services'), headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+        'x-auth-token': userProvider.user.token,
+      });
 
-  //     httpErrorHandle(
-  //       response: res,
-  //       context: context,
-  //       onSuccess: () {
-  //         for (int i = 0; i < jsonDecode(res.body).length; i++) {
-  //           productList.add(
-  //             Product.fromJson(
-  //               jsonEncode(
-  //                 jsonDecode(res.body)[i],
-  //               ),
-  //             ),
-  //           );
-  //         }
-  //       },
-  //     );
-  //   } catch (e) {
-  //     showSnackBar(context, e.toString());
-  //   }
-  //   return productList;
-  // }
+      httpErrorHandle(
+        response: res,
+        context: context,
+        onSuccess: () {
+          for (int i = 0; i < jsonDecode(res.body).length; i++) {
+            serviceList.add(
+              Service.fromJson(
+                jsonEncode(
+                  jsonDecode(res.body)[i],
+                ),
+              ),
+            );
+          }
+        },
+      );
+    } catch (e) {
+      showSnackBar(context, e.toString());
+    }
+    return serviceList;
+  }
 
-  // void deleteProduct({
-  //   required BuildContext context,
-  //   required Product product,
-  //   required VoidCallback onSuccess,
-  // }) async {
-  //   final userProvider = Provider.of<UserProvider>(context, listen: false);
+  void deleteProduct({
+    required BuildContext context,
+    required Service product,
+    required VoidCallback onSuccess,
+  }) async {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
 
-  //   try {
-  //     http.Response res = await http.post(
-  //       Uri.parse('$uri/admin/delete-product'),
-  //       headers: {
-  //         'Content-Type': 'application/json; charset=UTF-8',
-  //         'x-auth-token': userProvider.user.token,
-  //       },
-  //       body: jsonEncode({
-  //         'id': product.id,
-  //       }),
-  //     );
+    try {
+      http.Response res = await http.post(
+        Uri.parse('$uri/admin/delete-service'),
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+          'x-auth-token': userProvider.user.token,
+        },
+        body: jsonEncode({
+          'id': product.id,
+        }),
+      );
 
-  //     httpErrorHandle(
-  //       response: res,
-  //       context: context,
-  //       onSuccess: () {
-  //         onSuccess();
-  //       },
-  //     );
-  //   } catch (e) {
-  //     showSnackBar(context, e.toString());
-  //   }
-  // }
+      httpErrorHandle(
+        response: res,
+        context: context,
+        onSuccess: () {
+          onSuccess();
+        },
+      );
+    } catch (e) {
+      showSnackBar(context, e.toString());
+    }
+  }
 
   // Future<List<Order>> fetchAllOrders(BuildContext context) async {
   //   final userProvider = Provider.of<UserProvider>(context, listen: false);
