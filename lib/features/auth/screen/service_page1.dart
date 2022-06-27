@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:mistri/common/widgets/custom_button.dart';
 import 'package:mistri/constants/global_variables.dart';
+import 'package:mistri/features/auth/screen/category_deals_screen.dart';
 
 class SErvicePage1 extends StatelessWidget {
   static const String routeName = '/servicepage1';
    SErvicePage1({ Key? key }) : super(key: key);
 
+
+
+void navigateToCategoryPage(BuildContext context, String category) {
+    Navigator.pushNamed(context, CategoryDealsScreen.routeName,
+        arguments: category);
+  }
   @override
   
   Widget build(BuildContext context) {
@@ -46,10 +53,10 @@ class SErvicePage1 extends StatelessWidget {
                   itemBuilder: (BuildContext context, int index) {
                     //return Image.asset(images[index]);
                     return GestureDetector(
-              // onTap: () => navigateToCategoryPage(
-              //   context,
-              //   GlobalVariables.categoryImages[index]['title']!,
-              // ),
+              onTap: () => navigateToCategoryPage(
+                context,
+                GlobalVariables.ServiceImages1[index]['title']!,
+              ),
               child: Column(
                 //crossAxisAlignment: CrossAxisAlignment.center,
                 children: [

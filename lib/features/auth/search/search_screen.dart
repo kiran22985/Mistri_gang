@@ -1,35 +1,48 @@
-import 'package:flutter/material.dart';
-
+import 'package:mistri/common/widgets/loader.dart';
 import 'package:mistri/constants/global_variables.dart';
 import 'package:mistri/features/auth/screen/address_box.dart';
-//import 'package:mistri/features/auth/screen/below_app_bar.dart';
-import 'package:mistri/features/auth/screen/carousel_image.dart';
-//import 'package:mistri/features/auth/screen/drawerpage.dart';
-import 'package:mistri/features/auth/screen/service_page1.dart';
-import 'package:mistri/features/auth/screen/service_page2.dart';
-import 'package:mistri/features/auth/screen/service_page3.dart';
-import 'package:mistri/features/auth/screen/top_categories.dart';
-import 'package:mistri/features/auth/search/search_screen.dart';
+import 'package:mistri/features/auth/services/search_serviceapi.dart';
+//import 'package:mistri/features/product_details/screens/product_details_screen.dart';
+//import 'package:mistri/features/search/services/search_services.dart';
+//import 'package:mistri/features/search/widget/searched_product.dart';
+import 'package:mistri/models/service.dart';
+import 'package:flutter/material.dart';
 
-
-
-class HomePage extends StatefulWidget {
-  static const String routeName = '/home';
-  const HomePage({Key? key}) : super(key: key);
+class SearchScreen extends StatefulWidget {
+  static const String routeName = '/search-screen';
+  final String searchQuery;
+  const SearchScreen({
+    Key? key,
+    required this.searchQuery,
+  }) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<SearchScreen> createState() => _SearchScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
-   void navigateToSearchScreen(String query) {
+class _SearchScreenState extends State<SearchScreen> {
+  List<Service>? products;
+  final SearchServices searchServices = SearchServices();
+
+  @override
+  void initState() {
+    super.initState();
+    fetchSearchedProduct();
+  }
+
+  fetchSearchedProduct() async {
+    products = await searchServices.fetchSearchedProduct(
+        context: context, searchQuery: widget.searchQuery);
+    setState(() {});
+  }
+
+  void navigateToSearchScreen(String query) {
     Navigator.pushNamed(context, SearchScreen.routeName, arguments: query);
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      //drawer: const Mydrawer(),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
         child: AppBar(
@@ -43,7 +56,6 @@ class _HomePageState extends State<HomePage> {
             children: [
               Expanded(
                 child: Container(
-                  
                   height: 42,
                   margin: const EdgeInsets.only(left: 15),
                   child: Material(
@@ -83,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                             width: 1,
                           ),
                         ),
-                        hintText: 'Search for services and packages',
+                        hintText: 'Search Amazon.in',
                         hintStyle: const TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 17,
@@ -103,28 +115,33 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const AddressBox(),
-            const CarouselImage(),
-            const SizedBox(height: 20),
-            const TopCategories(),
-            const SizedBox(
-              height: 10,
+      body: products == null
+          ? const Loader()
+          : Column(
+              children: [
+                const AddressBox(),
+                const SizedBox(height: 10),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: products!.length,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          // Navigator.pushNamed(
+                          //   context,
+                          //   ProductDetailScreen.routeName,
+                          //   arguments: products![index],
+                          //);
+                        },
+                        // child: SearchedProduct(
+                        //   product: products![index],
+                        // ),
+                      );
+                    },
+                  ),
+                ),
+              ],
             ),
-            SErvicePage1(),
-            const SizedBox(
-              height: 10,
-            ),
-            const ServicePage2(),
-            const SizedBox(
-              height: 10,
-            ),
-            const ServicePage3()
-          ],
-        ),
-      ),
     );
   }
 }

@@ -34,6 +34,7 @@ import 'package:mistri/features/auth/screen/view_service1.dart';
 import 'package:mistri/features/auth/screen/view_service2.dart';
 import 'package:mistri/features/auth/screen/view_service3.dart';
 import 'package:mistri/features/auth/screen/welcome.dart';
+import 'package:mistri/features/auth/search/search_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
   switch (routeSettings.name) {
@@ -168,6 +169,12 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
       return MaterialPageRoute(
         settings: routeSettings,
         builder: (_) => const AddServiceScreen(),
+      );
+      case SearchScreen.routeName:
+      var searchQuery = routeSettings.arguments as String;
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => SearchScreen(searchQuery: searchQuery,),
       );
       
     default:

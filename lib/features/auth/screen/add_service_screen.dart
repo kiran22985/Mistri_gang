@@ -37,10 +37,14 @@ class _AddServiceScreenState extends State<AddServiceScreen> {
 
   List<String> serviceCategories = [
     'AC and appliance repair',
-    'Salon',
-    'Salon For Men',
-    'Cleaning and pest control',
-    'plumbing'
+    'Message Therapy',
+    'Furniture making',
+    'Electricians',
+    'Plumbers',
+    'Carpenters',
+    'Hair Services For women',
+    'Salon For women'
+    
   ];
 
   void sellProduct() {
