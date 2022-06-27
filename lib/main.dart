@@ -47,8 +47,8 @@ class MyApp extends StatelessWidget {
       ),
       onGenerateRoute: (settings) => generateRoute(settings),
        home: Provider.of<UserProvider>(context).user.type == 'user'
-              ? const AdminScreen() 
-              : const WelcomePage()
+              ? const WelcomePage() 
+              : const AdminScreen()
               
           
       // initialRoute: '/',

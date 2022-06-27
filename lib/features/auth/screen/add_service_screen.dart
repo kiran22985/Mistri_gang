@@ -37,7 +37,7 @@ class _AddServiceScreenState extends State<AddServiceScreen> {
 
   List<String> serviceCategories = [
     'AC and appliance repair',
-    'Salon For Women',
+    'Salon',
     'Salon For Men',
     'Cleaning and pest control',
     'plumbing'

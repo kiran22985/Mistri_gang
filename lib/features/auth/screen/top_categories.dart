@@ -1,13 +1,13 @@
 import 'package:mistri/constants/global_variables.dart';
-//import 'package:mistri/features/auth/screen/category_deals_screen.dart';
+import 'package:mistri/features/auth/screen/category_deals_screen.dart';
 import 'package:flutter/material.dart';
 
 class TopCategories extends StatelessWidget {
   const TopCategories({Key? key}) : super(key: key);
 
   void navigateToCategoryPage(BuildContext context, String category) {
-  //   Navigator.pushNamed(context, CategoryDealsScreen.routeName,
-  //       arguments: category);
+    Navigator.pushNamed(context, CategoryDealsScreen.routeName,
+        arguments: category);
   }
 
   @override
@@ -47,10 +47,10 @@ class TopCategories extends StatelessWidget {
                   itemBuilder: (BuildContext context, int index) {
                     //return Image.asset(images[index]);
                     return GestureDetector(
-              // onTap: () => navigateToCategoryPage(
-              //   context,
-              //   GlobalVariables.categoryImages[index]['title']!,
-              // ),
+              onTap: () => navigateToCategoryPage(
+                context,
+                GlobalVariables.categoryImages[index]['title']!,
+              ),
               child: Column(
                 //crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
