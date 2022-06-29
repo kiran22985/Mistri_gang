@@ -13,6 +13,7 @@ import 'package:mistri/features/auth/screen/homepage.dart';
 
 import 'package:mistri/features/auth/screen/otp1.dart';
 import 'package:mistri/features/auth/screen/otp2.dart';
+import 'package:mistri/features/auth/screen/product_details_screen.dart';
 import 'package:mistri/features/auth/screen/professional_loginpage.dart';
 import 'package:mistri/features/auth/screen/professional_screen.dart';
 import 'package:mistri/features/auth/screen/profile.dart';
@@ -35,7 +36,7 @@ import 'package:mistri/features/auth/screen/view_service2.dart';
 import 'package:mistri/features/auth/screen/view_service3.dart';
 import 'package:mistri/features/auth/screen/welcome.dart';
 import 'package:mistri/features/auth/search/search_screen.dart';
-
+import 'package:mistri/models/service.dart';
 Route<dynamic> generateRoute(RouteSettings routeSettings) {
   switch (routeSettings.name) {
     case CategoryDealsScreen.routeName:
@@ -175,6 +176,12 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
       return MaterialPageRoute(
         settings: routeSettings,
         builder: (_) => SearchScreen(searchQuery: searchQuery,),
+      );
+      case ProductDetailScreen.routeName:
+      var product = routeSettings.arguments as Service;
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) =>  ProductDetailScreen(product: product,),
       );
       
     default:

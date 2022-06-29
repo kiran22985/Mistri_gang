@@ -31,7 +31,8 @@ class AuthService {
           address: address,
           phone: phone,
           type: '',
-          token: '');
+          token: '',
+          cart: [],);
 
       http.Response res = await http.post(
         Uri.parse('$uri/custregister'),
@@ -53,7 +54,7 @@ class AuthService {
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.green),
                     ),
-                    content: Text("You have been registered successfully"),
+                    content: const Text("You have been registered successfully"),
                     actions: <Widget>[
                       TextButton(
                         onPressed: () {
@@ -61,7 +62,7 @@ class AuthService {
                           
                           
                         },
-                        child: Text("Ok"),
+                        child: const Text("Ok"),
                       ),
                     ],
                   ));

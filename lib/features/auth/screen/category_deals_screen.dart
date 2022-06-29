@@ -1,5 +1,6 @@
 import 'package:mistri/common/widgets/loader.dart';
 import 'package:mistri/constants/global_variables.dart';
+import 'package:mistri/features/auth/screen/product_details_screen.dart';
 import 'package:mistri/features/auth/services/home_services.dart';
 // import 'package:mistri/features/home/services/home_services.dart';
 // import 'package:mistri/features/product_details/screens/product_details_screen.dart';
@@ -87,11 +88,11 @@ class _CategoryDealsScreenState extends State<CategoryDealsScreen> {
                       final product = productList![index];
                       return GestureDetector(
                         onTap: () {
-                          // Navigator.pushNamed(
-                          //   context,
-                          //   ProductDetailScreen.routeName,
-                          //   arguments: product,
-                          // );
+                          Navigator.pushNamed(
+                            context,
+                            ProductDetailScreen.routeName,
+                            arguments: product,
+                          );
                         },
                         child: Column(
                           children: [

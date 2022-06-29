@@ -1,6 +1,8 @@
 import 'package:mistri/common/widgets/loader.dart';
 import 'package:mistri/constants/global_variables.dart';
 import 'package:mistri/features/auth/screen/address_box.dart';
+import 'package:mistri/features/auth/screen/product_details_screen.dart';
+import 'package:mistri/features/auth/search/searched_product.dart';
 import 'package:mistri/features/auth/services/search_serviceapi.dart';
 //import 'package:mistri/features/product_details/screens/product_details_screen.dart';
 //import 'package:mistri/features/search/services/search_services.dart';
@@ -127,15 +129,15 @@ class _SearchScreenState extends State<SearchScreen> {
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: () {
-                          // Navigator.pushNamed(
-                          //   context,
-                          //   ProductDetailScreen.routeName,
-                          //   arguments: products![index],
-                          //);
+                          Navigator.pushNamed(
+                            context,
+                            ProductDetailScreen.routeName,
+                            arguments: products![index],
+                          );
                         },
-                        // child: SearchedProduct(
-                        //   product: products![index],
-                        // ),
+                        child: SearchedProduct(
+                          product: products![index],
+                        ),
                       );
                     },
                   ),

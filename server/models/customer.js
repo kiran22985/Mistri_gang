@@ -1,5 +1,5 @@
 const mongoose=require('mongoose');
-
+const { serviceSchema } = require("./service");
 const customerSchema=new mongoose.Schema({
     fullName:{
         type:String,
@@ -45,6 +45,15 @@ const customerSchema=new mongoose.Schema({
         //   },
         
     },
+    cart: [
+      {
+        product: serviceSchema,
+        quantity: {
+          type: Number,
+          required: true,
+        },
+      },
+    ],
 });
 
 const custModel=mongoose.model('customers',customerSchema);
