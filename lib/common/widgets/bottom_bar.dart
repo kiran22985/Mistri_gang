@@ -5,6 +5,8 @@ import 'package:mistri/features/auth/screen/homepage.dart';
 import 'package:mistri/features/auth/screen/professional_screen.dart';
 import 'package:mistri/features/auth/screen/profile.dart';
 import 'package:mistri/features/auth/screen/cart_screen.dart';
+import 'package:mistri/provider/user_provider.dart';
+import 'package:provider/src/provider.dart';
 
 class BottonBar extends StatefulWidget {
   static const String routeName = '/bottombar';
@@ -34,6 +36,7 @@ class _BottonBarState extends State<BottonBar> {
   }
   @override
   Widget build(BuildContext context) {
+    final userCartLen = context.watch<UserProvider>().user.cart.length;
     return Scaffold(
           body: pages[_page],
           bottomNavigationBar: BottomNavigationBar(
@@ -85,8 +88,8 @@ class _BottonBarState extends State<BottonBar> {
                 //   ),
                 child: Badge(
                   elevation: 0,
-                  // badgeContent: Text(userCartLen.toString()),
-                  //badgeContent: Text("2"),
+                  badgeContent: Text(userCartLen.toString()),
+    
                   badgeColor: Colors.white,
                   child: const Icon(
                     Icons.shopping_cart_outlined,

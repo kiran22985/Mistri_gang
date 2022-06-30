@@ -5,15 +5,19 @@ const express=require('express');
 const mongoose=require('mongoose');
 mongoose.connect('mongodb://localhost:27017/Mistri_app');
 //=============
+const app=express();
 const authRouter=require('./routes/auth');
 const adminRouter=require('./routes/admin'); 
 const productRouter = require('./routes/service');
-const app=express();
+const userRouter=require('./routes/user');
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(authRouter);
 app.use(adminRouter);
-app.use(productRouter)
+app.use(productRouter);
+app.use(userRouter);
+
 
 
 

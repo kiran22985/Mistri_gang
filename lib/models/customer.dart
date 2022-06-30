@@ -9,8 +9,7 @@ class User {
   final String phone;
   final String type;
   final String token;
-  
-   final List<dynamic> cart;
+  final List<dynamic> cart;
 
   User({
     required this.id,
@@ -34,7 +33,7 @@ class User {
       'phone': phone,
       'type': type,
       'token': token,
-      // 'token': token,
+      
       'cart': cart,
     };
   }

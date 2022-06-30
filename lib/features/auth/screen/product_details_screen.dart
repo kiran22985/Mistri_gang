@@ -223,11 +223,11 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             Padding(
               padding: const EdgeInsets.all(10),
               child: CustomButton(
-                text: 'Buy Now',
+                text: 'Book Now',
                 onTap: () {},
               ),
             ),
-            const SizedBox(height: 10),
+            //const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.all(10),
               child: CustomButton(
