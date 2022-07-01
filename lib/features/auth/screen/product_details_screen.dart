@@ -140,7 +140,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // Padding(
             //   padding: const EdgeInsets.all(8.0),
@@ -165,6 +165,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 widget.product.name,
                 style: const TextStyle(
                   fontSize: 15,
+                  fontWeight: FontWeight.bold
                 ),
               ),
             ),
@@ -175,7 +176,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     builder: (BuildContext context) => Image.network(
                       i,
                       fit: BoxFit.contain,
-                      height: 200,
+                      height: 50,
                     ),
                   );
                 },
@@ -185,15 +186,12 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 height: 300,
               ),
             ),
-            Container(
-              color: Colors.black12,
-              height: 5,
-            ),
+           
             Padding(
               padding: const EdgeInsets.all(8),
               child: RichText(
                 text: TextSpan(
-                  text: 'Deal Price: ',
+                  text: ' Price: ',
                   style: const TextStyle(
                     fontSize: 16,
                     color: Colors.black,
@@ -220,7 +218,11 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               color: Colors.black12,
               height: 5,
             ),
-            Padding(
+            SizedBox(height: 30,),
+            Column(
+              
+              children: [
+              Padding(
               padding: const EdgeInsets.all(10),
               child: CustomButton(
                 text: 'Book Now',
@@ -228,31 +230,28 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               ),
             ),
             //const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.all(10),
+            Container(
+
               child: CustomButton(
                 text: 'Add to Cart',
                 onTap: 
                 addToCart,
                 
-                color: const Color.fromRGBO(254, 216, 19, 1),
+                color: Color.fromARGB(255, 39, 254, 19),
               ),
             ),
-            const SizedBox(height: 10),
-            Container(
-              color: Colors.black12,
-              height: 5,
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10.0),
-              child: Text(
-                'Rate The Product',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
+            ],),
+           
+            // const Padding(
+            //   padding: EdgeInsets.symmetric(horizontal: 10.0),
+            //   child: Text(
+            //     'Rate The Product',
+            //     style: TextStyle(
+            //       fontSize: 22,
+            //       fontWeight: FontWeight.bold,
+            //     ),
+            //   ),
+            // ),
             // RatingBar.builder(
             //   initialRating: myRating,
             //   minRating: 1,

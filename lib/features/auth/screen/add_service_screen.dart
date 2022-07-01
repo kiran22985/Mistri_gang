@@ -155,7 +155,7 @@ class _AddServiceScreenState extends State<AddServiceScreen> {
                   labelText: 'Description',
                   controller1: descriptionController,
                   hintText: 'Description',
-                  maxLines: 20,
+                  maxLines: 5,
                   
                 ),
                 const SizedBox(height: 10),

@@ -46,6 +46,7 @@ class SearchedProduct extends StatelessWidget {
                       maxLines: 2,
                     ),
                   ),
+                  SizedBox(height:5),
                   // Container(
                   //   width: 235,
                   //   padding: const EdgeInsets.only(left: 10, top: 5),
@@ -65,19 +66,21 @@ class SearchedProduct extends StatelessWidget {
                       maxLines: 2,
                     ),
                   ),
+                  SizedBox(height:5),
                   Container(
                     width: 235,
                     padding: const EdgeInsets.only(left: 10),
-                    child: const Text('Eligible for FREE Shipping'),
+                    child:  Text('per person',style: TextStyle(
+                        color: Colors.teal,
+                      ),),
                   ),
+                  SizedBox(height:5),
                   Container(
                     width: 235,
                     padding: const EdgeInsets.only(left: 10, top: 5),
-                    child: const Text(
-                      'In Stock',
-                      style: TextStyle(
-                        color: Colors.teal,
-                      ),
+                    child:  Text(
+                      '${product.description}',
+                      
                       maxLines: 2,
                     ),
                   ),

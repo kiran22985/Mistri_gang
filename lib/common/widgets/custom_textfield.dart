@@ -35,6 +35,7 @@ class CustomeTextField extends StatelessWidget {
         }
         return null;
       },
+      maxLines: maxLines,
     );
   }
 }
