@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mistri/common/widgets/custom_button.dart';
 import 'package:mistri/common/widgets/custom_textfield.dart';
 import 'package:mistri/features/auth/services/auth_services.dart';
+import 'package:mistri/features/auth/services/professional_services.dart';
 
 class Professional_LoginPage extends StatefulWidget {
   static const String routeName = '/professionallogin';
@@ -12,23 +13,22 @@ class Professional_LoginPage extends StatefulWidget {
 }
 
 class _Professional_LoginPageState extends State<Professional_LoginPage> {
-  final _signInFormKey = GlobalKey<FormState>();
-  final AuthService authService = AuthService();
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  final _signInFormKey2 = GlobalKey<FormState>();
+  final ProService proService = ProService();
+  final TextEditingController _emailController2 = TextEditingController();
+  final TextEditingController _passwordController2 = TextEditingController();
   @override
   void dispose() {
     super.dispose();
-    _emailController.dispose();
-    _passwordController.dispose();
+    _emailController2.dispose();
+    _passwordController2.dispose();
   }
 
-  void signInUser() {
-    authService.signInUser(
+  void signInProfessional() {
+    proService.signInProfessional(
       context: context,
-      email: _emailController.text,
-      password: _passwordController.text,
-      
+      email: _emailController2.text,
+      password: _passwordController2.text,
     );
   }
 
@@ -92,11 +92,11 @@ class _Professional_LoginPageState extends State<Professional_LoginPage> {
                     Container(
                       padding: EdgeInsets.all(20),
                       child: Form(
-                          key: _signInFormKey,
+                          key: _signInFormKey2,
                           child: Column(
                             children: [
                               CustomeTextField(
-                                  controller1: _emailController,
+                                  controller1: _emailController2,
                                   labelText: 'Email',
                                   hintText: 'Enter email here'),
                               const SizedBox(
@@ -105,7 +105,7 @@ class _Professional_LoginPageState extends State<Professional_LoginPage> {
                               CustomeTextField(
                                   labelText: 'password',
                                   hintText: 'Enter password here',
-                                  controller1: _passwordController),
+                                  controller1: _passwordController2),
                             ],
                           )),
                     ),
@@ -129,10 +129,9 @@ class _Professional_LoginPageState extends State<Professional_LoginPage> {
                     CustomButton(
                         text: 'Login',
                         onTap: () {
-                          if (_signInFormKey.currentState!.validate()) {
-                            signInUser();
+                          if (_signInFormKey2.currentState!.validate()) {
+                            signInProfessional();
                           }
-                          
                         }),
                     const SizedBox(
                       height: 10,

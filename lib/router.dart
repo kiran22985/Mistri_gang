@@ -14,12 +14,13 @@ import 'package:mistri/features/auth/screen/homepage.dart';
 import 'package:mistri/features/auth/screen/otp1.dart';
 import 'package:mistri/features/auth/screen/otp2.dart';
 import 'package:mistri/features/auth/screen/product_details_screen.dart';
+
 import 'package:mistri/features/auth/screen/professional_loginpage.dart';
 import 'package:mistri/features/auth/screen/professional_screen.dart';
 import 'package:mistri/features/auth/screen/profile.dart';
 import 'package:mistri/features/auth/screen/proregpage1.dart';
 import 'package:mistri/features/auth/screen/proregpage2.dart';
-import 'package:mistri/features/auth/screen/proregpage3.dart';
+
 import 'package:mistri/features/auth/screen/proregpage4.dart';
 import 'package:mistri/features/auth/screen/register.dart';
 import 'package:mistri/features/auth/screen/resetpass1.dart';
@@ -54,6 +55,11 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
       return MaterialPageRoute(
         settings: routeSettings,
         builder: (_) => const LoginPage(),
+      );
+      case Professional_LoginPage.routeName:
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => const Professional_LoginPage(),
       );
       
 
@@ -121,11 +127,7 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         settings: routeSettings,
         builder: (_) => const ProRegPage2(),
       );
-      case ProRegPage3.routeName:
-      return MaterialPageRoute(
-        settings: routeSettings,
-        builder: (_) => const ProRegPage3(),
-      );
+      
       case ProRegPage4.routeName:
       return MaterialPageRoute(
         settings: routeSettings,

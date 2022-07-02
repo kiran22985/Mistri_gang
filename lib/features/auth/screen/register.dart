@@ -13,7 +13,7 @@ class RegisterPage1 extends StatefulWidget {
 
 class _RegisterPage1State extends State<RegisterPage1> {
   final _signUpFormKey = GlobalKey<FormState>();
-  
+
   final AuthService authService = AuthService();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -30,13 +30,12 @@ class _RegisterPage1State extends State<RegisterPage1> {
 
   void signUpUser() {
     authService.signupUser(
-      context: context,
-      email: _emailController.text,
-      password: _passwordController.text,
-      fullName: _nameController.text,
-      phone: _phoneController.text,
-      address: _addressController.text
-    );
+        context: context,
+        email: _emailController.text,
+        password: _passwordController.text,
+        fullName: _nameController.text,
+        phone: _phoneController.text,
+        address: _addressController.text);
   }
 
   Widget build(BuildContext context) {
@@ -97,55 +96,59 @@ class _RegisterPage1State extends State<RegisterPage1> {
                   ),
                   Container(
                     padding: EdgeInsets.all(20),
-                    
                     child: Form(
-                      key: _signUpFormKey,
-                      child: Column(
-                      children: [
-                           CustomeTextField(
-                           controller1: _nameController, 
-                      labelText: 'FullName', hintText: 'Enter full name'),
-                  const SizedBox(
-                    height: 15,
+                        key: _signUpFormKey,
+                        child: Column(
+                          children: [
+                            CustomeTextField(
+                                controller1: _nameController,
+                                labelText: 'FullName',
+                                hintText: 'Enter full name'),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            CustomeTextField(
+                                controller1: _emailController,
+                                labelText: 'Email',
+                                hintText: 'Enter email here'),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            CustomeTextField(
+                                controller1: _phoneController,
+                                labelText: 'Phone',
+                                hintText: 'Enter phone here'),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            CustomeTextField(
+                                controller1: _addressController,
+                                labelText: 'Address',
+                                hintText: 'Enter address here'),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            CustomeTextField(
+                                labelText: 'password',
+                                hintText: 'Enter password here',
+                                controller1: _passwordController),
+                          ],
+                        )),
                   ),
-                  CustomeTextField(
-                      controller1: _emailController,
-                      labelText: 'Email', hintText: 'Enter email here'),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                   CustomeTextField(
-                    controller1: _phoneController,
-                      labelText: 'Phone', hintText: 'Enter phone here'),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  CustomeTextField(
-                    controller1: _addressController,
-                      labelText: 'Address', hintText: 'Enter address here'),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  CustomeTextField(labelText: 'password', hintText: 'Enter password here', controller1: _passwordController),
-
-                      ],
-
-
-                    )),
-                  ),
-
                   const SizedBox(
                     height: 10,
                   ),
                   Container(
                     padding: const EdgeInsets.only(left: 20),
                   ),
-                  CustomButton(text: 'Signup', onTap: (){
-                    if (_signUpFormKey.currentState!.validate()) {
-                              signUpUser();
-                    }
-                   // Navigator.pushNamed(context, '/otp1');
-                  }),
+                  CustomButton(
+                      text: 'Signup',
+                      onTap: () {
+                        if (_signUpFormKey.currentState!.validate()) {
+                          signUpUser();
+                        }
+                        // Navigator.pushNamed(context, '/otp1');
+                      }),
                   const SizedBox(
                     height: 10,
                   ),

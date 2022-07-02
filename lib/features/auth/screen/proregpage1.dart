@@ -40,7 +40,7 @@ class _ProRegPage1State extends State<ProRegPage1> {
                   }),
                   SizedBox(height:20),
              CustomButton(text: 'Login', onTap: (){
-                    Navigator.pushNamed(context, '/login');
+                    Navigator.pushNamed(context, '/professionallogin');
                   })    
           ],
         )));

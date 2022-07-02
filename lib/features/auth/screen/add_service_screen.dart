@@ -23,7 +23,7 @@ class _AddServiceScreenState extends State<AddServiceScreen> {
   final TextEditingController quantityController = TextEditingController();
   final AdminServices adminServices = AdminServices();
 
-  String category = 'AC and appliance repair';
+  String category = 'Hair Services for women';
   List<File> images = [];
   final _addProductFormKey = GlobalKey<FormState>();
   @override
@@ -36,13 +36,12 @@ class _AddServiceScreenState extends State<AddServiceScreen> {
   }
 
   List<String> serviceCategories = [
-    'AC and appliance repair',
+    'Hair Services for women',
     'Message Therapy',
     'Furniture making',
     'Electricians',
     'Plumbers',
     'Carpenters',
-    'Hair Services For women',
     'Salon For women'
     
   ];

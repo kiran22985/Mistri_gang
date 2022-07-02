@@ -96,7 +96,9 @@ class AccountScreen extends StatelessWidget {
             ListTile(
               leading: const Icon(Icons.people),
               title: const Text('Register as Proffesional'),
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/proreg1');
+              },
             ),
             ListTile(
               leading: const Icon(Icons.share),

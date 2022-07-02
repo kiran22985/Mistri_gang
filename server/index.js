@@ -10,6 +10,7 @@ const authRouter=require('./routes/auth');
 const adminRouter=require('./routes/admin'); 
 const productRouter = require('./routes/service');
 const userRouter=require('./routes/user');
+const proRouter = require('./routes/professionalroute');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -17,6 +18,7 @@ app.use(authRouter);
 app.use(adminRouter);
 app.use(productRouter);
 app.use(userRouter);
+app.use(proRouter);
 
 
 
