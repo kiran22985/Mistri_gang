@@ -2,6 +2,7 @@ import 'package:mistri/common/widgets/bottom_bar.dart';
 import 'package:mistri/features/auth/screen/aboutpage.dart';
 import 'package:mistri/features/auth/screen/add_service_screen.dart';
 import 'package:mistri/features/auth/screen/address_box.dart';
+import 'package:mistri/features/auth/screen/address_screen.dart';
 import 'package:mistri/features/auth/screen/category_deals_screen.dart';
 import 'package:mistri/features/auth/screen/login.dart';
 import 'package:mistri/features/auth/screen/admin_screen.dart';
@@ -62,7 +63,12 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         builder: (_) => const Professional_LoginPage(),
       );
       
-
+      case AddressScreen.routeName:
+      var totalAmount1 = routeSettings.arguments as String;
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => AddressScreen(totalAmount: totalAmount1,),
+      );
     case HomePage.routeName:
       return MaterialPageRoute(
         settings: routeSettings,

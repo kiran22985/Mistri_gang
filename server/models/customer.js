@@ -47,11 +47,11 @@ const customerSchema=new mongoose.Schema({
     },
     cart: [
       {
-        product: serviceSchema,
-        quantity: {
-          type: Number,
-          required: true,
-        },
+        service: serviceSchema,
+        // quantity: {
+        //   type: Number,
+        //   required: true,
+        // },
       },
     ],
 });

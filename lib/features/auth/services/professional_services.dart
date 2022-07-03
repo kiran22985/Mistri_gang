@@ -4,7 +4,7 @@ import 'package:mistri/models/professional.dart';
 import 'package:http/http.dart' as http;
 import 'package:mistri/constants/error_handling.dart';
 import 'package:mistri/constants/utils.dart';
-import 'package:mistri/provider/professional_provider.dart';
+import 'package:mistri/provider/user_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -81,7 +81,7 @@ class ProService {
       {required BuildContext context,
       required String email,
       required String password,
-      final user = Provider.of<ProfessionalProvider>}) async {
+      final user1 = Provider.of<UserProvider>}) async {
     try {
       http.Response res = await http.post(
         Uri.parse('$uri/prologin'),
@@ -98,8 +98,8 @@ class ProService {
         context: context,
         onSuccess: () async {
           SharedPreferences prefs = await SharedPreferences.getInstance();
-          Provider.of<ProfessionalProvider>(context, listen: false)
-              .setUser(res.body);
+          Provider.of<UserProvider>(context, listen: false)
+              .setUser1(res.body);
           await prefs.setString('x-auth-token', jsonDecode(res.body)['token']);
           showDialog(
               //barrierColor: Colors.lightGreen.shade400,

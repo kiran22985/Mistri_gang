@@ -4,6 +4,7 @@ import 'package:mistri/constants/global_variables.dart';
 // import 'package:mistri/features/cart/widgets/cart_product.dart';
 
 import 'package:mistri/features/auth/screen/address_box.dart';
+import 'package:mistri/features/auth/screen/address_screen.dart';
 import 'package:mistri/features/auth/screen/cart_product.dart';
 import 'package:mistri/features/auth/screen/cart_subtotal.dart';
 import 'package:mistri/features/auth/search/search_screen.dart';
@@ -23,13 +24,13 @@ class _CartScreenState extends State<CartScreen> {
     Navigator.pushNamed(context, SearchScreen.routeName, arguments: query);
   }
 
-  // void navigateToAddress(int sum) {
-  //   Navigator.pushNamed(
-  //     context,
-  //     AddressScreen.routeName,
-  //     arguments: sum.toString(),
-  //   );
-  // }
+  void navigateToAddress(int sum) {
+    Navigator.pushNamed(
+      context,
+      AddressScreen.routeName,
+      arguments: sum.toString(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -117,14 +118,7 @@ class _CartScreenState extends State<CartScreen> {
           children: [
             const AddressBox(),
             const CartSubtotal(),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CustomButton(
-                text: 'Proceed to book (${user.cart.length} items)',
-                onTap: () => (){},//navigateToAddress(sum),
-                color: Color.fromARGB(255, 53, 140, 253),
-              ),
-            ),
+            
             const SizedBox(height: 15),
             Container(
               color: Colors.black12.withOpacity(0.08),
@@ -139,6 +133,14 @@ class _CartScreenState extends State<CartScreen> {
                   index: index,
                 );
               },
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustomButton(
+                text: 'Proceed to book (${user.cart.length} items)',
+                onTap: () => navigateToAddress(sum),
+                color: const Color.fromARGB(255, 53, 140, 253),
+              ),
             ),
           ],
         ),

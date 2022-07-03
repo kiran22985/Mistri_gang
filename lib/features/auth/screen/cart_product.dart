@@ -70,11 +70,12 @@ class _CartProductState extends State<CartProduct> {
                       maxLines: 2,
                     ),
                   ),
+                  const SizedBox(height:5),
                   Container(
                     width: 235,
                     padding: const EdgeInsets.only(left: 10, top: 5),
                     child: Text(
-                      '\$${product.price}',
+                      '\Rs${product.price}',
                       style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -82,19 +83,21 @@ class _CartProductState extends State<CartProduct> {
                       maxLines: 2,
                     ),
                   ),
+                  SizedBox(height:5),
                   Container(
                     width: 235,
                     padding: const EdgeInsets.only(left: 10),
-                    child: const Text('Eligible for FREE Shipping'),
+                    child:  Text('per person',style: TextStyle(
+                        color: Colors.teal,
+                      ),),
                   ),
+                  SizedBox(height:5),
                   Container(
                     width: 235,
                     padding: const EdgeInsets.only(left: 10, top: 5),
-                    child: const Text(
-                      'In Stock',
-                      style: TextStyle(
-                        color: Colors.teal,
-                      ),
+                    child:  Text(
+                      '${product.description}',
+                      
                       maxLines: 2,
                     ),
                   ),
