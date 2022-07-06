@@ -1,4 +1,5 @@
 import 'package:mistri/common/widgets/custom_button.dart';
+import 'package:mistri/features/auth/screen/address_screen.dart';
 import 'package:mistri/features/auth/services/product_details_services.dart';
 //import 'package:mistri/common/widgets/stars.dart';
 //import 'package:mistri/features/product_details/services/product_details_services.dart';
@@ -163,10 +164,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               ),
               child: Text(
                 widget.product.name,
-                style: const TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold
-                ),
+                style:
+                    const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
               ),
             ),
             CarouselSlider(
@@ -186,7 +185,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 height: 300,
               ),
             ),
-           
+
             Padding(
               padding: const EdgeInsets.all(8),
               child: RichText(
@@ -218,30 +217,29 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               color: Colors.black12,
               height: 5,
             ),
-            SizedBox(height: 30,),
+            SizedBox(
+              height: 30,
+            ),
             Column(
-              
               children: [
-              Padding(
-              padding: const EdgeInsets.all(10),
-              child: CustomButton(
-                text: 'Book Now',
-                onTap: () {},
-              ),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: CustomButton(
+                    text: 'Book Now',
+                    onTap: () {},
+                  ),
+                ),
+                //const SizedBox(height: 10),
+                Container(
+                  child: CustomButton(
+                    text: 'Add to Cart',
+                    onTap: addToCart,
+                    color: Color.fromARGB(255, 39, 254, 19),
+                  ),
+                ),
+              ],
             ),
-            //const SizedBox(height: 10),
-            Container(
 
-              child: CustomButton(
-                text: 'Add to Cart',
-                onTap: 
-                addToCart,
-                
-                color: Color.fromARGB(255, 39, 254, 19),
-              ),
-            ),
-            ],),
-           
             // const Padding(
             //   padding: EdgeInsets.symmetric(horizontal: 10.0),
             //   child: Text(

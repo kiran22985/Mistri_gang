@@ -1,3 +1,4 @@
+import 'package:mistri/common/widgets/custom_button.dart';
 import 'package:mistri/constants/utils.dart';
 //import 'package:mistri/features/address/services/address_services.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,8 @@ class _AddressScreenState extends State<AddressScreen> {
   List<PaymentItem> paymentItems = [];
   final AddressServices addressServices = AddressServices();
 
+  String date = "";
+  DateTime selectedDate = DateTime.now();
   @override
   void initState() {
     super.initState();
@@ -51,8 +54,7 @@ class _AddressScreenState extends State<AddressScreen> {
     pincodeController.dispose();
     cityController.dispose();
   }
-
-  void onApplePayResult(res) {
+   void onApplePayResult(res) {
     if (Provider.of<UserProvider>(context, listen: false)
         .user
         .address
@@ -60,11 +62,11 @@ class _AddressScreenState extends State<AddressScreen> {
       addressServices.saveUserAddress(
           context: context, address: addressToBeUsed);
     }
-    addressServices.placeOrder(
-      context: context,
-      address: addressToBeUsed,
-      totalSum: double.parse(widget.totalAmount),
-    );
+    // addressServices.placeOrder(
+    //   context: context,
+    //   address: addressToBeUsed,
+    //   totalSum: double.parse(widget.totalAmount),
+    // );
   }
 
   void onGooglePayResult(res) {
@@ -75,14 +77,13 @@ class _AddressScreenState extends State<AddressScreen> {
       addressServices.saveUserAddress(
           context: context, address: addressToBeUsed);
     }
-    addressServices.placeOrder(
-      context: context,
-      address: addressToBeUsed,
-      totalSum: double.parse(widget.totalAmount),
-    );
+    // addressServices.placeOrder(
+    //   context: context,
+    //   address: addressToBeUsed,
+    //   totalSum: double.parse(widget.totalAmount),
+    // );
   }
-
-  void payPressed(String addressFromProvider) {
+   void payPressed(String addressFromProvider) {
     addressToBeUsed = "";
 
     bool isForm = flatBuildingController.text.isNotEmpty ||
@@ -103,7 +104,6 @@ class _AddressScreenState extends State<AddressScreen> {
       showSnackBar(context, 'ERROR');
     }
   }
-
   @override
   Widget build(BuildContext context) {
     var address = context.watch<UserProvider>().user.address;
@@ -182,10 +182,20 @@ class _AddressScreenState extends State<AddressScreen> {
                       labelText: 'Town/City',
                     ),
                     const SizedBox(height: 10),
+                    
+                    
+                    ElevatedButton(
+                      onPressed: () {
+                        _selectDate(context);
+                      },
+                      child: const Text("Choose Date"),
+                    ),
+                    Text(
+                        "${selectedDate.day}/${selectedDate.month}/${selectedDate.year}"),
                   ],
                 ),
               ),
-              ApplePayButton(
+               ApplePayButton(
                 width: double.infinity,
                 style: ApplePayButtonStyle.whiteOutline,
                 type: ApplePayButtonType.buy,
@@ -215,5 +225,20 @@ class _AddressScreenState extends State<AddressScreen> {
         ),
       ),
     );
+  }
+
+  _selectDate(BuildContext context) async {
+    final DateTime? selected = await showDatePicker(
+        context: context,
+        initialDate: selectedDate,
+        firstDate: DateTime(2010),
+        lastDate: DateTime(2025),
+        helpText: "SELECT BOOKING DATE",
+        cancelText: "NOT NOW",
+        confirmText: "BOOK NOW");
+    if (selected != null && selected != selectedDate)
+      setState(() {
+        selectedDate = selected;
+      });
   }
 }

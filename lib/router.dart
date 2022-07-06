@@ -4,6 +4,7 @@ import 'package:mistri/features/auth/screen/add_service_screen.dart';
 import 'package:mistri/features/auth/screen/address_box.dart';
 import 'package:mistri/features/auth/screen/address_screen.dart';
 import 'package:mistri/features/auth/screen/category_deals_screen.dart';
+
 import 'package:mistri/features/auth/screen/login.dart';
 import 'package:mistri/features/auth/screen/admin_screen.dart';
 import 'package:mistri/features/auth/screen/below_app_bar.dart';
@@ -84,6 +85,7 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
         settings: routeSettings,
         builder: (_) => const RegisterPage1(),
       );
+      
 
     case OTP1.routeName:
       //var category = routeSettings.arguments as String;

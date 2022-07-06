@@ -137,7 +137,7 @@ class _CartScreenState extends State<CartScreen> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: CustomButton(
-                text: 'Proceed to book (${user.cart.length} items)',
+                text: 'Select Address and slot',
                 onTap: () => navigateToAddress(sum),
                 color: const Color.fromARGB(255, 53, 140, 253),
               ),
