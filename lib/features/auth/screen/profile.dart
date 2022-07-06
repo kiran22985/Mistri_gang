@@ -55,7 +55,7 @@ class AccountScreen extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              height: 150,
+              height: 160,
               color: Colors.greenAccent,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
