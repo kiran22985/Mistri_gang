@@ -55,7 +55,7 @@ class AccountScreen extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              height: 150,
+              height: 160,
               color: Colors.greenAccent,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -71,21 +71,7 @@ class AccountScreen extends StatelessWidget {
                 ],
               ),
             ),
-            //  UserAccountsDrawerHeader(
-            //   accountName: Text(
-            //     user.fullName,
-            //     style: const TextStyle(
-            //       fontWeight: FontWeight.bold,
-            //     ),
-            //   ),
-            //   accountEmail: Text(
-            //     user.email,
-            //     style: const TextStyle(
-            //       fontWeight: FontWeight.bold,
-            //     ),
-            //   ),
-            //   //currentAccountPicture: CircleAvatar(),
-            // ),
+            
             ListTile(
               leading: const Icon(Icons.description),
               title: const Text('About Mistri'),
