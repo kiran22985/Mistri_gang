@@ -71,21 +71,7 @@ class AccountScreen extends StatelessWidget {
                 ],
               ),
             ),
-            //  UserAccountsDrawerHeader(
-            //   accountName: Text(
-            //     user.fullName,
-            //     style: const TextStyle(
-            //       fontWeight: FontWeight.bold,
-            //     ),
-            //   ),
-            //   accountEmail: Text(
-            //     user.email,
-            //     style: const TextStyle(
-            //       fontWeight: FontWeight.bold,
-            //     ),
-            //   ),
-            //   //currentAccountPicture: CircleAvatar(),
-            // ),
+            
             ListTile(
               leading: const Icon(Icons.description),
               title: const Text('About Mistri'),
