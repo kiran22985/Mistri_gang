@@ -57,4 +57,19 @@ userRouter.delete("/api/remove-from-cart/:id",async (req, res) => {
     res.status(500).json({ error: e.message });
   }
 });
+
+// save user address
+userRouter.post("/api/save-user-address", async (req, res) => {
+  try {
+    const { address } = req.body;
+    let user = await custModel.findById(req.user);
+    user.address = address;
+    user = await user.save();
+    res.json(user);
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+
 module.exports=userRouter;

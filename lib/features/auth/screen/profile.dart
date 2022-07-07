@@ -1,9 +1,6 @@
 import 'package:mistri/constants/global_variables.dart';
-// import 'package:amazon_clone_tutorial/features/account/widgets/below_app_bar.dart';
-// import 'package:amazon_clone_tutorial/features/account/widgets/orders.dart';
-// import 'package:amazon_clone_tutorial/features/account/widgets/top_buttons.dart';
 import 'package:flutter/material.dart';
-//import 'package:mistri/features/auth/screen/below_app_bar.dart';
+import 'package:mistri/features/auth/services/logout_services.dart';
 import 'package:mistri/provider/user_provider.dart';
 
 import 'package:provider/provider.dart';
@@ -111,20 +108,11 @@ class AccountScreen extends StatelessWidget {
                 Icons.logout,
               ),
               title: const Text('Logout'),
-              onTap: () {},
+              onTap: () =>LogoutServices().logOut(context),
             ),
           ],
         ),
-      // body: Column(
-      //   children: const [
-      //     BelowAppBar(),
-      //     SizedBox(height: 10),
-      //     //TopButtons(),
-      //     //SizedBox(height: 20),
-      //     //Orders(),
-          
-      //   ],
-      // ),
+      
     );
   }
 }

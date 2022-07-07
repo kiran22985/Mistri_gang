@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       onGenerateRoute: (settings) => generateRoute(settings),    
-      initialRoute: '/admin',
+      initialRoute: '/',
       routes: {
         '/': (context) => const WelcomePage(),
         '/admin':(context)=>const AdminScreen(),
