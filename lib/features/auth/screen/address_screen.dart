@@ -9,6 +9,7 @@ import 'package:mistri/common/widgets/custom_textfield.dart';
 import 'package:mistri/constants/global_variables.dart';
 import 'package:mistri/provider/user_provider.dart';
 
+//dateand time page completed
 class AddressScreen extends StatefulWidget {
   static const String routeName = '/address';
   final String totalAmount;
