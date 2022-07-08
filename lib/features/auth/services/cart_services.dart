@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 String uri = 'http://10.0.2.2:3000';
+//cart services added here
 class CartServices {
   void removeFromCart({
     required BuildContext context,
