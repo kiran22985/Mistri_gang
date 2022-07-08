@@ -10,6 +10,8 @@ import 'package:mistri/features/auth/services/search_serviceapi.dart';
 import 'package:mistri/models/service.dart';
 import 'package:flutter/material.dart';
 
+
+//searchservice completed
 class SearchScreen extends StatefulWidget {
   static const String routeName = '/search-screen';
   final String searchQuery;
