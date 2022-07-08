@@ -7,7 +7,7 @@ import 'package:mistri/constants/global_variables.dart';
 import 'package:mistri/features/auth/screen/analytics.dart';
 import 'package:mistri/features/auth/screen/bookings_page.dart';
 import 'package:mistri/features/auth/screen/post_screen.dart';
-
+//admin screen
 class AdminScreen extends StatefulWidget {
   static const String routeName = '/admin';
   const AdminScreen({Key? key}) : super(key: key);
