@@ -12,6 +12,7 @@ import 'package:mistri/provider/user_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+//cart screen page starts here UI
 class CartScreen extends StatefulWidget {
   const CartScreen({Key? key}) : super(key: key);
 

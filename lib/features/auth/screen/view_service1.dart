@@ -9,6 +9,7 @@ class ViewService1 extends StatefulWidget {
   State<ViewService1> createState() => _ViewService1State();
 }
 
+//service page added to view all services
 class _ViewService1State extends State<ViewService1> {
   @override
   Widget build(BuildContext context) {
